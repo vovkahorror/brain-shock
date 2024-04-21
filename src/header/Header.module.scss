@@ -1,0 +1,12 @@
+@import '../common/styles/mixins';
+@import '../common/styles/variables';
+
+.header {
+  padding-top: 26px;
+  padding-bottom: 26px;
+  background-color: $backgroundColor;
+
+  .container {
+    @include container;
+  }
+}
