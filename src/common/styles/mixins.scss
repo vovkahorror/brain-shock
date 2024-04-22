@@ -6,8 +6,8 @@
   justify-content: $justifyContent;
 }
 
-@mixin container() {
-  @include flex($justifyContent: space-between);
+@mixin container($justifyContent: flex-start) {
+  @include flex($justifyContent: $justifyContent);
 
   width: 100%;
   margin-right: auto;

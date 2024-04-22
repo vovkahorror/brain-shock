@@ -1,5 +1,11 @@
 @import './common/styles/variables';
 
+@font-face {
+  font-family: Quantu;
+  font-weight: 700;
+  src: url('./assets/fonts/quantu1t.woff2') format('woff2');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

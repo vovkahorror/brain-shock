@@ -2,11 +2,31 @@
 @import '../common/styles/variables';
 
 .header {
-  padding-top: 26px;
-  padding-bottom: 26px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   background-color: $backgroundColor;
 
   .container {
     @include container;
+
+    .logo {
+      @include flex($gap: 20px);
+
+      cursor: default;
+
+      img {
+        width: 100px;
+      }
+
+      span {
+        font-family: Quantu, sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        font-style: italic;
+        text-transform: uppercase;
+
+        -webkit-text-stroke: 1px $primaryColor;
+      }
+    }
   }
 }
