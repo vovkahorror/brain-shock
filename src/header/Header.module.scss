@@ -7,7 +7,7 @@
   background-color: $backgroundColor;
 
   .container {
-    @include container;
+    @include container($justifyContent: space-between);
 
     .logo {
       @include flex($gap: 20px);
@@ -26,6 +26,43 @@
         text-transform: uppercase;
 
         -webkit-text-stroke: 1px $primaryColor;
+      }
+    }
+
+    .link {
+      position: relative;
+      transform: rotate(5deg);
+
+      &:hover > :nth-child(1) {
+        transform: translateX(-4px) rotate(-5deg);
+      }
+
+      &:hover > :nth-child(2) {
+        transform: translateX(4px) rotate(-5deg);
+      }
+
+      &:hover .icon {
+        fill: $primaryColor;
+      }
+
+      .iconWrapperTop {
+        overflow: hidden;
+        display: flex;
+        height: 20px;
+        transition: 0.2s transform ease-out;
+      }
+
+      .iconWrapperBottom {
+        @extend .iconWrapperTop;
+
+        bottom: -20px;
+        align-items: flex-end;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        transition: 0.2s;
       }
     }
   }
