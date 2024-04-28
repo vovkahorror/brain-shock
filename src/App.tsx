@@ -22,6 +22,7 @@ export function App() {
       </div>
 
       <Header />
+      <main></main>
     </div>
   )
 }
