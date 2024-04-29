@@ -6,13 +6,18 @@ import { Posts } from '@/posts/Posts'
 import styles from './App.module.scss'
 
 export function App() {
-  const bgVideoUrl = 'https://https://www.youtube.com/embed/aCPGTNoizxw'
+  const bgVideoUrl = 'https://www.youtube.com/embed/aCPGTNoizxw'
 
   return (
     <div>
       <div className={styles.pageBackground}>
         <ReactPlayer
           className={styles.bgVideo}
+          config={{
+            youtube: {
+              playerVars: { rel: 0 },
+            },
+          }}
           height={1080}
           loop
           muted
