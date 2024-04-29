@@ -10,9 +10,9 @@ export const Post = ({ post }: PostProps) => {
       <div className={styles.image} style={{ backgroundImage: `url(${photos[0]})` }}></div>
       <div>
         <h1 className={styles.title}>{title}</h1>
-        <span>{price} грн</span>
-        <span>стан: {condition}</span>
-        <p>{description}</p>
+        <span className={styles.price}>{price} грн</span>
+        <span className={styles.condition}>стан: {condition}</span>
+        <p className={styles.description}>{description}</p>
       </div>
     </article>
   )
