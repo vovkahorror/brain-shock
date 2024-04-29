@@ -1,6 +1,7 @@
 import ReactPlayer from 'react-player'
 
 import { Header } from '@/header/Header'
+import { Posts } from '@/posts/Posts'
 
 import styles from './App.module.scss'
 
@@ -22,7 +23,9 @@ export function App() {
       </div>
 
       <Header />
-      <main></main>
+      <main className={styles.main}>
+        <Posts />
+      </main>
     </div>
   )
 }

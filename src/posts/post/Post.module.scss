@@ -1,0 +1,15 @@
+.post {
+  display: flex;
+
+  .image {
+    flex-shrink: 0;
+    width: 30%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
