@@ -1,16 +1,24 @@
+import { NavLink } from 'react-router-dom'
+
+import { useNavigation } from '@/common/hooks/useNavigation'
 import { PostType } from '@/data/posts'
 
 import styles from './Post.module.scss'
 
 export const Post = ({ post }: PostProps) => {
+  const { setNavigationProps } = useNavigation()
   const { condition, description, photos, price, title } = post
+
+  const handleClick = () => setNavigationProps({ post })
 
   return (
     <article className={styles.post}>
       <div className={styles.image} style={{ backgroundImage: `url(${photos[0]})` }}></div>
       <div>
         <h2>
-          <span className={styles.title}>{title}</span>
+          <NavLink className={styles.title} onClick={handleClick} to={'/detailed-post'}>
+            {title}
+          </NavLink>
         </h2>
         <span className={styles.price}>{price} грн</span>
         <span className={styles.condition}>стан: {condition}</span>

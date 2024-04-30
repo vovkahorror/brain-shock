@@ -1,5 +1,7 @@
 import ReactPlayer from 'react-player'
+import { Route, Routes } from 'react-router-dom'
 
+import { ContextProvider } from '@/common/components/ContextProvider'
 import { Header } from '@/header/Header'
 import { Posts } from '@/posts/Posts'
 
@@ -29,7 +31,12 @@ export function App() {
 
       <Header />
       <main className={styles.main}>
-        <Posts />
+        <ContextProvider>
+          <Routes>
+            <Route element={<Posts />} path={'/'} />
+            <Route element={<div>Detailed</div>} path={'/detailed-post'} />
+          </Routes>
+        </ContextProvider>
       </main>
     </div>
   )
