@@ -1,3 +1,5 @@
+import { Navigate } from 'react-router-dom'
+
 import { useNavigation } from '@/common/hooks/useNavigation'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
@@ -10,19 +12,27 @@ import 'lightgallery/css/lightgallery.css'
 import 'lightgallery/scss/lg-zoom.scss'
 import 'lightgallery/scss/lightgallery.scss'
 
+import styles from './DetailedPost.module.scss'
+
 export const DetailedPost = () => {
   const { navigationProps } = useNavigation()
 
+  if (!navigationProps) {
+    return <Navigate to={'/'} />
+  }
+
   return (
     <section>
-      <div>
-        <LightGallery animateThumb plugins={[lgThumbnail, lgZoom]} speed={500}>
-          {navigationProps?.post.photos.map(photo => (
-            <a href={photo} key={v1()}>
-              <img alt={navigationProps?.post.title} src={photo} style={{ width: '400px' }} />
-            </a>
-          ))}
-        </LightGallery>
+      <div className={styles.container}>
+        <div className={styles.galleryWrapper}>
+          <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
+            {navigationProps?.post.photos.map(photo => (
+              <a href={photo} key={v1()}>
+                <img alt={navigationProps.post.title} src={photo} />
+              </a>
+            ))}
+          </LightGallery>
+        </div>
       </div>
     </section>
   )

@@ -1,0 +1,26 @@
+@import '../common/styles/mixins';
+@import '../common/styles/variables';
+
+.container {
+  @include container;
+
+  .galleryWrapper > * {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
+    width: 50%;
+
+    a {
+      width: 40%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      border: 1px solid $primaryColor;
+      border-radius: 5px;
+    }
+  }
+}
