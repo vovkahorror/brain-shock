@@ -24,6 +24,7 @@ export const DetailedPost = () => {
   return (
     <section>
       <div className={styles.container}>
+        <h2 className={styles.title}>{navigationProps.post.title}</h2>
         <div className={styles.galleryWrapper}>
           <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
             {navigationProps?.post.photos.map(photo => (
