@@ -2,6 +2,7 @@ import ReactPlayer from 'react-player'
 import { Route, Routes } from 'react-router-dom'
 
 import { ContextProvider } from '@/common/components/ContextProvider'
+import { DetailedPost } from '@/detailed-post/DetailedPost'
 import { Header } from '@/header/Header'
 import { Posts } from '@/posts/Posts'
 
@@ -34,7 +35,7 @@ export function App() {
         <ContextProvider>
           <Routes>
             <Route element={<Posts />} path={'/'} />
-            <Route element={<div>Detailed</div>} path={'/detailed-post'} />
+            <Route element={<DetailedPost />} path={'/detailed-post'} />
           </Routes>
         </ContextProvider>
       </main>
