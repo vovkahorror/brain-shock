@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Navigate } from 'react-router-dom'
 
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -17,6 +18,18 @@ import styles from './DetailedPost.module.scss'
 export const DetailedPost = () => {
   const { navigationProps } = useNavigation()
 
+  const imagesSizes = useMemo(
+    () =>
+      navigationProps?.post.photos.map(photo => {
+        const img = new Image()
+
+        img.src = photo
+
+        return `${img.width}-${img.height}`
+      }),
+    [navigationProps?.post]
+  ) as string[]
+
   if (!navigationProps) {
     return <Navigate to={'/'} />
   }
@@ -28,8 +41,8 @@ export const DetailedPost = () => {
         <div className={styles.content}>
           <div className={styles.galleryWrapper}>
             <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
-              {navigationProps?.post.photos.map(photo => (
-                <a href={photo} key={v1()}>
+              {navigationProps?.post.photos.map((photo, ind) => (
+                <a data-lg-size={imagesSizes[ind]} href={photo} key={v1()}>
                   <img alt={navigationProps.post.title} src={photo} />
                 </a>
               ))}

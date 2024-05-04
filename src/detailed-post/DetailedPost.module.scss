@@ -21,9 +21,18 @@
       width: 40%;
 
       & > * {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
         gap: 10px;
+        justify-content: center;
+
+        a {
+          width: calc((100% / 3) - (20px / 3));
+
+          &:nth-child(1) {
+            width: 100%;
+          }
+        }
 
         img {
           display: block;
