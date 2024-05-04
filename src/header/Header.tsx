@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 import styles from './Header.module.scss'
 
 import logoImage from '../assets/images/logo.webp'
@@ -9,10 +11,12 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <img alt={'Logo'} src={logoImage} />
-          <span>BrainShock</span>
-        </div>
+        <NavLink to={'/'}>
+          <span className={styles.logo}>
+            <img alt={'Logo'} src={logoImage} />
+            <span className={styles.title}>BrainShock</span>
+          </span>
+        </NavLink>
         <div>
           <a className={styles.link} href={telegramLink} rel={'noreferrer'} target={'_blank'}>
             <span className={styles.iconWrapperTop}>
