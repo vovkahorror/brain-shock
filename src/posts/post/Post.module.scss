@@ -15,9 +15,22 @@
     width: 30%;
     min-height: 200px;
 
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% auto;
     border-radius: $borderRadius;
+
+    transition: 0.3s;
+
+    &:hover {
+      background-size: 120% auto;
+      border: 2px solid $primaryColor;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+    }
   }
 
   .title {

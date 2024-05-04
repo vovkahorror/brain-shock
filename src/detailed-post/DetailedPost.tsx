@@ -25,14 +25,19 @@ export const DetailedPost = () => {
     <section>
       <div className={styles.container}>
         <h2 className={styles.title}>{navigationProps.post.title}</h2>
-        <div className={styles.galleryWrapper}>
-          <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
-            {navigationProps?.post.photos.map(photo => (
-              <a href={photo} key={v1()}>
-                <img alt={navigationProps.post.title} src={photo} />
-              </a>
-            ))}
-          </LightGallery>
+        <div className={styles.content}>
+          <div className={styles.galleryWrapper}>
+            <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
+              {navigationProps?.post.photos.map(photo => (
+                <a href={photo} key={v1()}>
+                  <img alt={navigationProps.post.title} src={photo} />
+                </a>
+              ))}
+            </LightGallery>
+          </div>
+          <div className={styles.text}>
+            <span className={styles.price}>{navigationProps.post.price} грн</span>
+          </div>
         </div>
       </div>
     </section>

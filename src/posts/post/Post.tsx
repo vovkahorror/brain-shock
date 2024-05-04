@@ -13,7 +13,13 @@ export const Post = ({ post }: PostProps) => {
 
   return (
     <article className={styles.post}>
-      <div className={styles.image} style={{ backgroundImage: `url(${photos[0]})` }}></div>
+      <div
+        className={styles.image}
+        onClick={handleClick}
+        style={{ backgroundImage: `url(${photos[0]})` }}
+      >
+        <NavLink className={styles.title} onClick={handleClick} to={'/detailed-post'} />
+      </div>
       <div>
         <h2>
           <NavLink className={styles.title} onClick={handleClick} to={'/detailed-post'}>

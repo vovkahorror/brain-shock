@@ -9,20 +9,35 @@
 
   .title {
     font-size: 40px;
+    font-weight: 700;
     text-align: center;
   }
 
-  .galleryWrapper > * {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 40%;
+  .content {
+    display: flex;
+    gap: 40px;
 
-    img {
-      display: block;
-      width: 100%;
-      border: 1px solid $primaryColor;
-      border-radius: 5px;
+    .galleryWrapper {
+      width: 40%;
+
+      & > * {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        img {
+          display: block;
+          width: 100%;
+          border: 1px solid $primaryColor;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .text {
+    .price {
+      font-size: 32px;
     }
   }
 }
