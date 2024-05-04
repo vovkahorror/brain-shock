@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -9,7 +10,7 @@ export const Post = ({ post }: PostProps) => {
   const { setNavigationProps } = useNavigation()
   const { condition, description, photos, price, title } = post
 
-  const handleClick = () => setNavigationProps({ post })
+  const handleClick = useCallback(() => setNavigationProps({ post }), [])
 
   return (
     <article className={styles.post}>

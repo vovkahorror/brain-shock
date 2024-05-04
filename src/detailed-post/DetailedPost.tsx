@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -15,24 +15,39 @@ import 'lightgallery/scss/lightgallery.scss'
 
 import styles from './DetailedPost.module.scss'
 
-export const DetailedPost = () => {
+export const DetailedPost = memo(() => {
   const { navigationProps } = useNavigation()
-
-  const imagesSizes = useMemo(
-    () =>
-      navigationProps?.post.photos.map(photo => {
-        const img = new Image()
-
-        img.src = photo
-
-        return `${img.width}-${img.height}`
-      }),
-    [navigationProps?.post]
-  ) as string[]
+  const [imagesSizes, setImagesSizes] = useState([] as string[])
 
   if (!navigationProps) {
     return <Navigate to={'/'} />
   }
+
+  useEffect(() => {
+    if (navigationProps && navigationProps.post && navigationProps.post.photos) {
+      const fetchImageSizes = async () => {
+        const sizes = await Promise.all(
+          navigationProps.post.photos.map(photo => {
+            return new Promise<string>((resolve, reject) => {
+              const img = new Image()
+
+              img.onload = () => {
+                resolve(`${img.width}-${img.height}`)
+              }
+              img.onerror = error => {
+                reject(error)
+              }
+              img.src = photo
+            })
+          })
+        )
+
+        setImagesSizes(sizes)
+      }
+
+      fetchImageSizes()
+    }
+  }, [])
 
   return (
     <section>
@@ -55,4 +70,4 @@ export const DetailedPost = () => {
       </div>
     </section>
   )
-}
+})
