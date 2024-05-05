@@ -19,10 +19,6 @@ export const DetailedPost = memo(() => {
   const { navigationProps } = useNavigation()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 
-  if (!navigationProps) {
-    return <Navigate to={'/'} />
-  }
-
   useEffect(() => {
     if (navigationProps && navigationProps.post && navigationProps.post.photos) {
       const fetchImageSizes = async () => {
@@ -47,7 +43,11 @@ export const DetailedPost = memo(() => {
 
       fetchImageSizes()
     }
-  }, [])
+  }, [navigationProps])
+
+  if (!navigationProps) {
+    return <Navigate to={'/'} />
+  }
 
   return (
     <section>
