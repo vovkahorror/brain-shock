@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Route, Routes } from 'react-router-dom'
 
@@ -8,24 +9,25 @@ import { Posts } from '@/posts/Posts'
 
 import styles from './App.module.scss'
 
+import backgroundVideo from './assets/videos/background-video.mp4'
+
 export function App() {
-  const bgVideoUrl = 'https://www.youtube.com/embed/aCPGTNoizxw'
+  const [playerReady, setPlayerReady] = useState<boolean>(false)
+
+  const handlePlayerReady = () => setPlayerReady(true)
 
   return (
     <div>
       <div className={styles.pageBackground}>
         <ReactPlayer
           className={styles.bgVideo}
-          config={{
-            youtube: {
-              playerVars: { rel: 0 },
-            },
-          }}
           height={1080}
           loop
           muted
+          onReady={handlePlayerReady}
           playing
-          url={bgVideoUrl}
+          style={{ opacity: playerReady ? 1 : 0 }}
+          url={backgroundVideo}
           width={1920}
         />
       </div>
