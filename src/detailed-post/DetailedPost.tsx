@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
+import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
 import { useNavigation } from '@/common/hooks/useNavigation'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
@@ -58,7 +59,7 @@ export const DetailedPost = memo(() => {
             <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
               {navigationProps?.post.photos.map((photo, ind) => (
                 <a data-lg-size={imagesSizes[ind]} href={photo} key={v1()}>
-                  <img alt={navigationProps.post.title} src={photo} />
+                  <ImageWithPreloading alt={navigationProps.post.title} image={photo} />
                 </a>
               ))}
             </LightGallery>
