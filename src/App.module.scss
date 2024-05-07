@@ -1,3 +1,5 @@
+@import './common/styles/variables';
+
 .pageBackground {
   position: fixed;
   z-index: -1;
@@ -20,6 +22,12 @@
   }
 }
 
-.main > * {
-  padding: 60px;
+.main {
+  & > :nth-child(2n) {
+    background-color: $backgroundColor;
+  }
+
+  & > * {
+    padding: 60px;
+  }
 }
