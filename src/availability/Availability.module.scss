@@ -3,7 +3,7 @@
 
 .container {
   @include container;
-  @include flex($gap: 20px);
+  @include flex($gap: 30px);
 
   a {
     text-decoration: none;

@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Availability } from '@/availability/Availability'
 import { ContextProvider } from '@/common/components/ContextProvider'
 import { DetailedPost } from '@/detailed-post/DetailedPost'
+import { Footer } from '@/footer/Footer'
 import { Header } from '@/header/Header'
 import { ModInfo } from '@/mod-info/ModInfo'
 import { Posts } from '@/posts/Posts'
@@ -45,6 +46,7 @@ export function App() {
         <ModInfo />
         <Availability />
       </main>
+      <Footer />
     </div>
   )
 }

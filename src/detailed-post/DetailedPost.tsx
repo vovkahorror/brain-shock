@@ -2,6 +2,7 @@ import { memo, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
+import { messageLink } from '@/common/consts/links'
 import { useNavigation } from '@/common/hooks/useNavigation'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
@@ -19,8 +20,6 @@ import styles from './DetailedPost.module.scss'
 import BasketIcon from '../assets/images/basket-icon.svg?react'
 
 export const DetailedPost = memo(() => {
-  const messageLink = 'https://t.me/Yurkapro2000?text=Вітаю! Я з приводу придбання консолі'
-
   const { navigationProps } = useNavigation()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 

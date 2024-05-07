@@ -1,12 +1,10 @@
+import { sheetLink, telegramLinkAdmin } from '@/common/consts/links'
+
 import styles from './Availability.module.scss'
 
 import SheetIcon from '../assets/images/sheet-icon.svg?react'
 
 export const Availability = () => {
-  const telegramLink = 'https://t.me/Yurkapro2000'
-  const sheetLink =
-    'https://docs.google.com/spreadsheets/d/1Dn2YrV7_QMns6XzqISJJYcQa_wNbtvvJAfpKPv2Yo_o'
-
   return (
     <section>
       <div className={styles.container}>
@@ -15,7 +13,7 @@ export const Availability = () => {
           них. Дата останнього оновлення указана в таблиці, тому наявність додатково уточнюйте в{' '}
           <a
             className={styles.telegramLink}
-            href={telegramLink}
+            href={telegramLinkAdmin}
             rel={'noreferrer'}
             target={'_blank'}
           >

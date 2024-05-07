@@ -1,0 +1,14 @@
+@import '../common/styles/variables';
+@import '../common/styles/mixins';
+
+.footer {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: $backgroundColor;
+
+  .container {
+    @include container;
+
+    flex-direction: column;
+  }
+}

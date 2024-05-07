@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom'
 
+import { telegramLink } from '@/common/consts/links'
+
 import styles from './Header.module.scss'
 
 import logoImage from '../assets/images/logo.webp'
 import TelegramIcon from '../assets/images/telegram.svg?react'
 
 export const Header = () => {
-  const telegramLink = 'https://t.me/Brain_Shock'
-
   return (
     <header className={styles.header}>
       <div className={styles.container}>
