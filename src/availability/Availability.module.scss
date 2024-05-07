@@ -1,0 +1,31 @@
+@import '../common/styles/mixins';
+@import '../common/styles/variables';
+
+.container {
+  @include container;
+  @include flex($gap: 20px);
+
+  a {
+    text-decoration: none;
+  }
+
+  .paragraph {
+    font-size: 24px;
+    text-align: center;
+
+    .telegramLink {
+      font-weight: 700;
+      color: $primaryColor;
+      text-decoration: underline;
+      transition: 0.2s ease-in;
+
+      &:hover {
+        color: $textColor;
+      }
+    }
+  }
+
+  .button {
+    @include button;
+  }
+}

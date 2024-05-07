@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Route, Routes } from 'react-router-dom'
 
+import { Availability } from '@/availability/Availability'
 import { ContextProvider } from '@/common/components/ContextProvider'
 import { DetailedPost } from '@/detailed-post/DetailedPost'
 import { Header } from '@/header/Header'
@@ -42,6 +43,7 @@ export function App() {
           </Routes>
         </ContextProvider>
         <ModInfo />
+        <Availability />
       </main>
     </div>
   )
