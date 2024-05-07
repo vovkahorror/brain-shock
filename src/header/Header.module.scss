@@ -21,13 +21,22 @@
       }
 
       .title {
-        font-family: Quantu, sans-serif;
-        font-size: 36px;
-        font-weight: 700;
-        font-style: italic;
-        text-transform: uppercase;
+        width: 210px;
+        height: 100px;
+        fill: $textColor;
 
-        -webkit-text-stroke: 1px $primaryColor;
+        text {
+          font-family: Quantu, sans-serif;
+          font-size: 36px;
+          font-weight: 700;
+          font-style: italic;
+          text-transform: uppercase;
+
+          stroke: $primaryColor;
+          stroke-width: 1;
+
+          animation: stroke 5s alternate;
+        }
       }
     }
 
@@ -67,5 +76,34 @@
         transition: 0.2s;
       }
     }
+  }
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgb(255 255 255 / 0%);
+    stroke: rgb(224 136 33 / 100%);
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 25%;
+    stroke-width: 2;
+  }
+
+  70% {
+    fill: rgb(255 255 255 / 0%);
+    stroke: rgb(224 136 33 / 100%);
+  }
+
+  80% {
+    fill: rgb(255 255 255 / 0%);
+    stroke: rgb(224 136 33 / 100%);
+    stroke-width: 3;
+  }
+
+  100% {
+    fill: rgb(255 255 255 / 100%);
+    stroke: rgb(224 136 33 / 0%);
+    stroke-dasharray: 50% 0;
+    stroke-dashoffset: -25%;
+    stroke-width: 0;
   }
 }
