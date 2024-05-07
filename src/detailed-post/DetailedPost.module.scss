@@ -128,7 +128,7 @@
         transition: all 0.2s ease-out;
 
         &::before {
-          animation: shine-90 0.5s 0s linear;
+          animation: shine 0.5s 0s linear;
         }
 
         & .icon {
@@ -144,9 +144,9 @@
   }
 }
 
-@keyframes shine-90 {
+@keyframes shine {
   0% {
-    left: 0%;
+    left: 0;
     opacity: 0;
   }
 
