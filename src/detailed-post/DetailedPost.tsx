@@ -16,7 +16,11 @@ import 'lightgallery/scss/lightgallery.scss'
 
 import styles from './DetailedPost.module.scss'
 
+import BasketIcon from '../assets/images/basket-icon.svg?react'
+
 export const DetailedPost = memo(() => {
+  const messageLink = 'https://t.me/Yurkapro2000?text=Вітаю! Я з приводу придбання консолі'
+
   const { navigationProps } = useNavigation()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 
@@ -66,6 +70,14 @@ export const DetailedPost = memo(() => {
           </div>
           <div className={styles.text}>
             <span className={styles.price}>{navigationProps.post.price} грн</span>
+            <span className={styles.condition}>стан: {navigationProps.post.condition}</span>
+            <a href={messageLink} rel={'noreferrer'} target={'_blank'}>
+              <button className={styles.button}>
+                <BasketIcon className={styles.icon} />
+                Замовити
+              </button>
+            </a>
+            <p className={styles.description}>{navigationProps.post.description}</p>
           </div>
         </div>
       </div>
