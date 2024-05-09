@@ -52,6 +52,12 @@
         transform: translateX(4px) rotate(-5deg);
       }
 
+      .icon {
+        width: 40px;
+        height: 40px;
+        transition: 0.2s;
+      }
+
       &:hover .icon {
         fill: $primaryColor;
       }
@@ -68,12 +74,6 @@
 
         bottom: -20px;
         align-items: flex-end;
-      }
-
-      .icon {
-        width: 40px;
-        height: 40px;
-        transition: 0.2s;
       }
     }
   }
@@ -101,9 +101,9 @@
 
   100% {
     fill: rgb(255 255 255 / 100%);
-    stroke: rgb(224 136 33 / 0%);
+    stroke: rgb(224 136 33 / 100%);
     stroke-dasharray: 50% 0;
     stroke-dashoffset: -25%;
-    stroke-width: 0;
+    stroke-width: 1;
   }
 }
