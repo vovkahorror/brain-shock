@@ -52,16 +52,6 @@
         transform: translateX(4px) rotate(-5deg);
       }
 
-      .icon {
-        width: 40px;
-        height: 40px;
-        transition: 0.2s;
-      }
-
-      &:hover .icon {
-        fill: $primaryColor;
-      }
-
       .iconWrapperTop {
         overflow: hidden;
         display: flex;
@@ -74,6 +64,16 @@
 
         bottom: -20px;
         align-items: flex-end;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        transition: 0.2s;
+      }
+
+      &:hover .icon {
+        fill: $primaryColor;
       }
     }
   }
