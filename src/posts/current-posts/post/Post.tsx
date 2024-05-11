@@ -6,7 +6,7 @@ import { PostType } from '@/data/posts'
 
 import styles from './Post.module.scss'
 
-import PreloaderIcon from '../../assets/images/preloader.svg?react'
+import PreloaderIcon from '../../../assets/images/preloader.svg?react'
 
 export const Post = ({ post }: PostProps) => {
   const { setNavigationProps } = useNavigation()

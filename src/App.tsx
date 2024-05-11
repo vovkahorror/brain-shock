@@ -8,7 +8,7 @@ import { DetailedPost } from '@/detailed-post/DetailedPost'
 import { Footer } from '@/footer/Footer'
 import { Header } from '@/header/Header'
 import { ModInfo } from '@/mod-info/ModInfo'
-import { Posts } from '@/posts/Posts'
+import { CurrentPosts } from '@/posts/current-posts/CurrentPosts'
 
 import styles from './App.module.scss'
 
@@ -39,7 +39,7 @@ export function App() {
       <main className={styles.main}>
         <ContextProvider>
           <Routes>
-            <Route element={<Posts />} path={'/'} />
+            <Route element={<CurrentPosts />} path={'/'} />
             <Route element={<DetailedPost />} path={'/detailed-post'} />
           </Routes>
         </ContextProvider>
