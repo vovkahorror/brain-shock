@@ -7,8 +7,8 @@
 
   padding: 30px;
 
-  border: 1px solid $textColor;
-  border-radius: $borderRadius;
+  border: 1px solid $text-color;
+  border-radius: $border-radius;
 
   .image {
     @include flex;
@@ -21,13 +21,13 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% auto;
-    border-radius: $borderRadius;
+    border-radius: $border-radius;
 
     transition: 0.3s;
 
     &:hover {
       background-size: 120% auto;
-      border: 2px solid $primaryColor;
+      border: 2px solid $primary-color;
     }
 
     a {
@@ -43,7 +43,7 @@
     text-decoration: none;
 
     &:hover {
-      color: $primaryColor;
+      color: $primary-color;
     }
   }
 

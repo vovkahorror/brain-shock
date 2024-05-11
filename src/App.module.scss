@@ -24,7 +24,7 @@
 
 .main {
   & > :nth-child(2n) {
-    background-color: $backgroundColor;
+    background-color: $background-color;
   }
 
   & > * {

@@ -43,11 +43,11 @@
 
   font-size: 24px;
   font-weight: 700;
-  color: $primaryColor;
+  color: $primary-color;
   text-transform: uppercase;
 
   background-color: unset;
-  border: 1px solid $primaryColor;
+  border: 1px solid $primary-color;
   border-radius: 10px;
   box-shadow: 0 0 0 0 transparent;
 
@@ -79,7 +79,7 @@
 
   &:hover {
     color: white;
-    background-color: $primaryColor;
+    background-color: $primary-color;
     box-shadow: 0 0 30px 0 rgb(224 136 33 / 50%);
     transition: all 0.2s ease-out;
 
