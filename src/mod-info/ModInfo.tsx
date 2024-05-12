@@ -4,7 +4,7 @@ export const ModInfo = () => {
   return (
     <section>
       <div className={styles.container}>
-        <p className={styles.paragraph}>
+        <div className={styles.paragraph}>
           <span className={styles.header}>
             Усі консолі, придбані у нас, спеціальним чином модифіковані, що відкриває для вас
             великий спектр можливостей. До прикладу декілька із них:
@@ -37,7 +37,7 @@ export const ModInfo = () => {
               та грати на пряму від блоку живлення і багато чого іншого.)
             </li>
           </ul>
-        </p>
+        </div>
       </div>
     </section>
   )
