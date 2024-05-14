@@ -1,0 +1,65 @@
+@import '../common/styles/mixins';
+@import '../common/styles/variables';
+
+.container {
+  @include container($justifyContent: space-between);
+
+  gap: 60px;
+}
+
+.post {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  min-width: calc(50% - 30px);
+  padding: 30px;
+
+  border: 1px solid $text-color;
+  border-radius: $border-radius;
+
+  .image {
+    @include flex;
+
+    flex-shrink: 0;
+
+    width: 100%;
+    min-height: 300px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    border-radius: $border-radius;
+
+    transition: 0.3s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    & .image {
+      background-size: 110% auto;
+      border: 2px solid $primary-color;
+    }
+
+    & .title {
+      color: $primary-color;
+    }
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  a {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+}
