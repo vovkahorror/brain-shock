@@ -2,9 +2,14 @@
 @import '../../../common/styles/mixins';
 
 .post {
-  display: flex;
-  gap: 30px;
+  position: relative;
 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  min-width: calc(50% - 30px);
   padding: 30px;
 
   border: 1px solid $text-color;
@@ -15,8 +20,8 @@
 
     flex-shrink: 0;
 
-    width: 30%;
-    min-height: 200px;
+    width: 100%;
+    min-height: 300px;
 
     background-repeat: no-repeat;
     background-position: center;
@@ -24,42 +29,36 @@
     border-radius: $border-radius;
 
     transition: 0.3s;
-
-    &:hover {
-      background-size: 120% auto;
-      border: 2px solid $primary-color;
-    }
-
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .title {
     font-size: 32px;
     font-weight: 700;
+    text-align: center;
     text-decoration: none;
-
-    &:hover {
-      color: $primary-color;
-    }
   }
 
   .price {
     display: block;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
+    color: red;
   }
 
-  .condition {
-    font-size: 16px;
-    font-style: italic;
+  &:hover {
+    & .image {
+      background-size: 110% auto;
+      border: 2px solid $primary-color;
+    }
+
+    & .title {
+      color: $primary-color;
+    }
   }
 
-  .description {
-    margin-top: 10px;
-    font-size: 20px;
+  a {
+    position: absolute;
+    inset: 0;
+    display: block;
   }
 }

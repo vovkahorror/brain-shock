@@ -1,7 +1,7 @@
 @import '../../common/styles/mixins';
 
 .container {
-  @include container($justifyContent: space-between);
+  @include container($justifyContent: center);
 
   gap: 60px;
 }

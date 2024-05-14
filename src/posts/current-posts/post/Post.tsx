@@ -10,7 +10,7 @@ import PreloaderIcon from '../../../assets/images/preloader.svg?react'
 
 export const Post = ({ post }: PostProps) => {
   const { setNavigationProps } = useNavigation()
-  const { condition, description, photos, price, title } = post
+  const { photos, price, title } = post
   const [imageLoaded, setImageLoaded] = useState(false)
 
   const handleImageLoad = useCallback(() => setImageLoaded(true), [])
@@ -25,18 +25,11 @@ export const Post = ({ post }: PostProps) => {
         style={{ backgroundImage: `url(${photos[0]})` }}
       >
         {!imageLoaded && <PreloaderIcon />}
-        <NavLink className={styles.title} onClick={handleClick} to={'/detailed-post'} />
       </div>
-      <div>
-        <h2>
-          <NavLink className={styles.title} onClick={handleClick} to={'/detailed-post'}>
-            {title}
-          </NavLink>
-        </h2>
-        <span className={styles.price}>{price} грн</span>
-        <span className={styles.condition}>стан: {condition}</span>
-        <p className={styles.description}>{description}</p>
-      </div>
+      <h2 className={styles.title}>{title}</h2>
+      <span className={styles.price}>{price} грн</span>
+
+      <NavLink className={styles.title} onClick={handleClick} to={'/detailed-post'} />
       <img
         alt={''}
         onError={handleImageLoad}

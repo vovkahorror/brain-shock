@@ -7,7 +7,7 @@ import { v1 } from 'uuid'
 import styles from './CurrentPosts.module.scss'
 
 export const CurrentPosts = () => {
-  const getPosts = useCallback(() => posts.map(post => <Post key={v1()} post={post} />), [])
+  const getPosts = useCallback(() => posts.new.map(post => <Post key={v1()} post={post} />), [])
 
   return (
     <section>

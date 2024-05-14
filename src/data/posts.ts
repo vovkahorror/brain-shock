@@ -1,76 +1,95 @@
-import post1_1 from '../assets/images/posts/post1/1.jpg'
-import post1_2 from '../assets/images/posts/post1/2.jpg'
-import post1_3 from '../assets/images/posts/post1/3.jpg'
-import post1_4 from '../assets/images/posts/post1/4.jpg'
-import post1_5 from '../assets/images/posts/post1/5.jpg'
-import post1_6 from '../assets/images/posts/post1/6.jpg'
-import post1_7 from '../assets/images/posts/post1/7.jpg'
-import post2_1 from '../assets/images/posts/post2/1.jpg'
-import post2_2 from '../assets/images/posts/post2/2.jpg'
-import post2_3 from '../assets/images/posts/post2/3.jpg'
-import post2_4 from '../assets/images/posts/post2/4.jpg'
-import post2_5 from '../assets/images/posts/post2/5.jpg'
-import post2_6 from '../assets/images/posts/post2/6.jpg'
-import post2_7 from '../assets/images/posts/post2/7.jpg'
-import post2_8 from '../assets/images/posts/post2/8.jpg'
-import post2_9 from '../assets/images/posts/post2/9.jpg'
-import post3_1 from '../assets/images/posts/post3/1.jpg'
-import post3_2 from '../assets/images/posts/post3/2.jpg'
-import post3_3 from '../assets/images/posts/post3/3.jpg'
-import post3_4 from '../assets/images/posts/post3/4.jpg'
-import post3_5 from '../assets/images/posts/post3/5.jpg'
-import post3_6 from '../assets/images/posts/post3/6.jpg'
-import post3_7 from '../assets/images/posts/post3/7.jpg'
-import post4_1 from '../assets/images/posts/post4/1.jpg'
-import post5_1 from '../assets/images/posts/post5/1.jpg'
+import { descriptionNew } from '@/common/consts/descriptions'
 
-export const posts: PostType[] = [
-  {
-    condition: 'вживаний',
-    description:
-      'Консоль вживана, має легкі сліди користування на задній кришці і потертість біля стіка. Екран в ідеалі.  Консоль обслугована, почищена від пилу, свіжа термопаста. Стан  АКБ 93.65% Комплект: консоль, чохол, кп 128 гб. Гарантія на чіповку 6 міс.',
-    photos: [post1_1, post1_2, post1_3, post1_4, post1_5, post1_6, post1_7],
-    price: 7799,
-    title: 'Nintendo Switch Lite',
-  },
-  {
-    condition: 'вживаний',
-    description:
-      'Консоль вживана, має легкі сліди користування, дисплей має декілька подряпин (постарався передати на фото). Акб в гарному стані, 94.5%. Консоль обслугована, почищена від пилу, свіжа термопаста. Комплект: консоль, чохол, кп 128 гб, оріг зарядка. Гарантія на чіповку 6 міс.',
-    photos: [post2_1, post2_2, post2_3, post2_4, post2_5, post2_6, post2_7, post2_8, post2_9],
-    price: 7599,
-    title: 'Nintendo Switch Lite',
-  },
-  {
-    condition: 'вживаний',
-    description:
-      'Консоль вживана, має легкі сліди користування на задній кришці. Екран без подряпин. В цілому консоль відчувається новою. Консоль обслугована, почищена від пилу, свіжа термопаста. Стан  АКБ 97.7% Комплект: консоль, чохол, кп 128 гб, оріг зарядка. Гарантія на чіповку 6 міс.',
-    photos: [post3_1, post3_2, post3_3, post3_4, post3_5, post3_6, post3_7],
-    price: 7999,
-    title: 'Nintendo Switch Lite',
-  },
-  {
-    condition: 'новий',
-    description:
-      'Консоль абсолютно нова, у використанні не була, відкривалась для монтажу чіпа та налаштування. Комплект: повний з усіма прибамбасами, кп 128 гб. Гарантія на чіповку 6 міс.',
-    photos: [post4_1],
-    price: 12000,
-    title: 'Nintendo Switch V2',
-  },
-  {
-    condition: 'новий',
-    description:
-      'Консолі абсолютно нові, у використанні не були, відкривались для монтажу чіпа та налаштування. Комплект: повний з усіма прибамбасами, кп 128 гб. Гарантія на чіповку 6 міс.',
-    photos: [post5_1],
-    price: 16299,
-    title: 'Nintendo Switch OLED Red Mario Special Edition',
-  },
-]
+import new_lite_01 from '../assets/images/consoles/new/lite/new_lite_01.webp'
+import new_lite_02 from '../assets/images/consoles/new/lite/new_lite_02.webp'
+import new_lite_03 from '../assets/images/consoles/new/lite/new_lite_03.webp'
+import new_lite_04 from '../assets/images/consoles/new/lite/new_lite_04.webp'
+import new_lite_05 from '../assets/images/consoles/new/lite/new_lite_05.webp'
+import new_lite_06 from '../assets/images/consoles/new/lite/new_lite_06.webp'
+import new_lite_07 from '../assets/images/consoles/new/lite/new_lite_07.webp'
+import new_oled_01 from '../assets/images/consoles/new/oled/new_oled_01.webp'
+import new_oled_02 from '../assets/images/consoles/new/oled/new_oled_02.webp'
+import new_oled_03 from '../assets/images/consoles/new/oled/new_oled_03.webp'
+import new_oled_04 from '../assets/images/consoles/new/oled/new_oled_04.webp'
+import new_oled_05 from '../assets/images/consoles/new/oled/new_oled_05.webp'
+import new_oled_06 from '../assets/images/consoles/new/oled/new_oled_06.webp'
+import new_oled_07 from '../assets/images/consoles/new/oled/new_oled_07.webp'
+import new_oled_08 from '../assets/images/consoles/new/oled/new_oled_08.webp'
+import new_v2_01 from '../assets/images/consoles/new/v2/new_v2_01.webp'
+import new_v2_02 from '../assets/images/consoles/new/v2/new_v2_02.webp'
+import new_v2_03 from '../assets/images/consoles/new/v2/new_v2_03.webp'
+import new_v2_04 from '../assets/images/consoles/new/v2/new_v2_04.webp'
+import new_v2_05 from '../assets/images/consoles/new/v2/new_v2_05.webp'
+import new_v2_06 from '../assets/images/consoles/new/v2/new_v2_06.webp'
+import new_v2_07 from '../assets/images/consoles/new/v2/new_v2_07.webp'
+import new_v2_08 from '../assets/images/consoles/new/v2/new_v2_08.webp'
+
+export const posts: PostsDataType = {
+  new: [
+    {
+      condition: 'новий',
+      description:
+        'Nintendo Switch OLED найдовше тримає заряд акумулятора і, порівняно з іншими портативками цього бренду, має найбільший і найсоковитіший дисплей, покращену збірку та конструкцію корпуса, та кращий звук в лінійці.\n' +
+        descriptionNew,
+      photos: [
+        new_oled_01,
+        new_oled_02,
+        new_oled_03,
+        new_oled_04,
+        new_oled_05,
+        new_oled_06,
+        new_oled_07,
+        new_oled_08,
+      ],
+      price: 15999,
+      title: 'Nintendo Switch OLED',
+    },
+    {
+      condition: 'новий',
+      description:
+        'Консоль Nintendo Switch V2, або, як ще її називають, оновлена версія, має кращий процесор порівняно з попередньою ревізією (16 нм проти 20 нм порівняно з першою ревізією). Це вам, як користувачеві, дає перевагу у вигляді відчутно збільшеної автономності, а, відповідно, консоль ви будете рідше заряджати і строк служби акумулятора довший. Консоль менше гріється, кулер працює тихіше, менше втягує пилу, відповідно консоль послугує довше. В останніх масштабних іграх продуктивність краща.\n' +
+        descriptionNew,
+      photos: [
+        new_v2_01,
+        new_v2_02,
+        new_v2_03,
+        new_v2_04,
+        new_v2_05,
+        new_v2_06,
+        new_v2_07,
+        new_v2_08,
+      ],
+      price: 12499,
+      title: 'Nintendo Switch V2',
+    },
+    {
+      condition: 'новий',
+      description: 'Портативна консоль Nintendo Switch Lite.\n' + descriptionNew,
+      photos: [
+        new_lite_01,
+        new_lite_02,
+        new_lite_03,
+        new_lite_04,
+        new_lite_05,
+        new_lite_06,
+        new_lite_07,
+      ],
+      price: '10199-10499',
+      title: 'Nintendo Switch Lite',
+    },
+  ],
+  used: [],
+}
+
+export type PostsDataType = {
+  new: PostType[]
+  used: PostType[]
+}
 
 export type PostType = {
   condition: 'вживаний' | 'новий'
   description: string
   photos: string[]
-  price: number
+  price: number | string
   title: string
 }
