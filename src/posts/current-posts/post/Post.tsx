@@ -8,14 +8,17 @@ import styles from './Post.module.scss'
 
 import PreloaderIcon from '../../../assets/images/preloader.svg?react'
 
-export const Post = ({ post }: PostProps) => {
+export const Post = ({ navPath, post }: PostProps) => {
   const { setNavigationProps } = useNavigation()
   const { photos, price, title } = post
   const [imageLoaded, setImageLoaded] = useState(false)
 
   const handleImageLoad = useCallback(() => setImageLoaded(true), [])
 
-  const handleClick = useCallback(() => setNavigationProps({ post }), [])
+  const handleClick = useCallback(
+    () => setNavigationProps({ navPath, post }),
+    [navPath, post, setNavigationProps]
+  )
 
   return (
     <article className={styles.post}>
@@ -42,5 +45,6 @@ export const Post = ({ post }: PostProps) => {
 }
 
 interface PostProps {
+  navPath: 'new' | 'used'
   post: PostType
 }

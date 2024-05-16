@@ -25,6 +25,7 @@ export const ContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
 }
 
 interface NavigationProps {
+  navPath: 'new' | 'used'
   post: PostType
 }
 
