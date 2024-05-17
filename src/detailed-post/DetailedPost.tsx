@@ -23,6 +23,8 @@ export const DetailedPost = memo(() => {
   const { navigationProps } = useNavigation()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 
+  console.log(navigationProps)
+
   useEffect(() => {
     if (navigationProps && navigationProps.post && navigationProps.post.photos) {
       const fetchImageSizes = async () => {

@@ -4,11 +4,11 @@ import { RouteObject, useRoutes } from 'react-router-dom'
 
 import { Availability } from '@/availability/Availability'
 import { ContextProvider } from '@/common/components/ContextProvider'
+import { PostsWrapper } from '@/common/components/PostsWrapper'
 import { Footer } from '@/footer/Footer'
 import { Header } from '@/header/Header'
 import { ModInfo } from '@/mod-info/ModInfo'
 import { MainPost } from '@/posts/MainPost'
-import { CurrentPosts } from '@/posts/current-posts/CurrentPosts'
 
 import styles from './App.module.scss'
 
@@ -21,8 +21,8 @@ export function App() {
     {
       children: [
         { element: <MainPost />, index: true },
-        { element: <CurrentPosts />, path: '/new' },
-        { element: <CurrentPosts />, path: '/used' },
+        { element: <PostsWrapper />, path: 'new/*' },
+        { element: <PostsWrapper />, path: 'used/*' },
       ],
       path: '/',
     },

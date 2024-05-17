@@ -32,7 +32,7 @@ export const Post = ({ navPath, post }: PostProps) => {
       <h2 className={styles.title}>{title}</h2>
       <span className={styles.price}>{price} грн</span>
 
-      <NavLink className={styles.title} onClick={handleClick} to={'/detailed-post'} />
+      <NavLink className={styles.title} onClick={handleClick} to={`/${navPath}/detailed-post`} />
       <img
         alt={''}
         onError={handleImageLoad}
