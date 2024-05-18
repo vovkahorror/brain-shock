@@ -23,8 +23,6 @@ export const DetailedPost = memo(() => {
   const { navigationProps } = useNavigation()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 
-  console.log(navigationProps)
-
   useEffect(() => {
     if (navigationProps && navigationProps.post && navigationProps.post.photos) {
       const fetchImageSizes = async () => {
@@ -72,13 +70,20 @@ export const DetailedPost = memo(() => {
           <div className={styles.text}>
             <span className={styles.price}>{navigationProps.post.price} грн</span>
             <span className={styles.condition}>стан: {navigationProps.post.condition}</span>
+            {navigationProps.post.color && (
+              <span className={styles.condition}>колір: {navigationProps.post.color}</span>
+            )}
             <a href={messageLink} rel={'noreferrer'} target={'_blank'}>
               <button className={styles.button}>
                 <BasketIcon className={styles.icon} />
                 Замовити
               </button>
             </a>
-            <p className={styles.description}>{navigationProps.post.description}</p>
+            <div className={styles.description}>
+              {navigationProps.post.description.split('\n').map((line, idx) => (
+                <p key={idx}>{line}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

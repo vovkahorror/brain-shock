@@ -93,7 +93,7 @@ export const posts: PostsDataType = {
       color: 'white',
       condition: 'вживаний',
       description:
-        'Консоль вживана має гарний косметичний стан, консоль немає дефектів чи якихось проблем. З переду ідеал, на екрані без подряпин. На задній кришці є легкі потертості.\n' +
+        'Консоль вживана має гарний косметичний стан, консоль не має дефектів чи якихось проблем. З переду ідеал, на екрані без подряпин. На задній кришці є легкі потертості.\n' +
         descriptionUsed,
       photos: [
         used_oled_white_01,
@@ -109,6 +109,27 @@ export const posts: PostsDataType = {
       ],
       price: 13999,
       title: 'Nintendo Switch OLED White',
+    },
+    {
+      color: 'blue-red',
+      condition: 'вживаний',
+      description:
+        'Консоль вживана має гарний косметичний стан, консоль не має дефектів чи якихось проблем. З переду ідеал, на екрані без подряпин. На задній кришці є легкі потертості.\n' +
+        descriptionUsed,
+      photos: [
+        used_oled_white_01,
+        used_oled_white_02,
+        used_oled_white_03,
+        used_oled_white_04,
+        used_oled_white_05,
+        used_oled_white_06,
+        used_oled_white_07,
+        used_oled_white_08,
+        used_oled_white_09,
+        used_oled_white_10,
+      ],
+      price: 13999,
+      title: 'Nintendo Switch OLED Blue Red',
     },
   ],
 }
