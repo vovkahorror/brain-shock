@@ -69,9 +69,15 @@ export const DetailedPost = memo(() => {
           </div>
           <div className={styles.text}>
             <span className={styles.price}>{navigationProps.post.price} грн</span>
-            <span className={styles.condition}>стан: {navigationProps.post.condition}</span>
+            <span>
+              <span className={styles.valueTitle}>стан:</span>{' '}
+              <span className={styles.value}>{navigationProps.post.condition}</span>
+            </span>
             {navigationProps.post.color && (
-              <span className={styles.condition}>колір: {navigationProps.post.color}</span>
+              <span>
+                <span className={styles.valueTitle}>колір:</span>{' '}
+                <span className={styles.value}>{navigationProps.post.color}</span>
+              </span>
             )}
             <a href={messageLink} rel={'noreferrer'} target={'_blank'}>
               <button className={styles.button}>

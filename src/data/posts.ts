@@ -23,6 +23,16 @@ import new_v2_05 from '../assets/images/consoles/new/v2/new_v2_05.webp'
 import new_v2_06 from '../assets/images/consoles/new/v2/new_v2_06.webp'
 import new_v2_07 from '../assets/images/consoles/new/v2/new_v2_07.webp'
 import new_v2_08 from '../assets/images/consoles/new/v2/new_v2_08.webp'
+import used_oled_blueRed_01 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_01.webp'
+import used_oled_blueRed_02 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_02.webp'
+import used_oled_blueRed_03 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_03.webp'
+import used_oled_blueRed_04 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_04.webp'
+import used_oled_blueRed_05 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_05.webp'
+import used_oled_blueRed_06 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_06.webp'
+import used_oled_blueRed_07 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_07.webp'
+import used_oled_blueRed_08 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_08.webp'
+import used_oled_blueRed_09 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_09.webp'
+import used_oled_blueRed_10 from '../assets/images/consoles/used/oled/blue-red/used_oled_blue-red_10.webp'
 import used_oled_white_01 from '../assets/images/consoles/used/oled/white/used_oled_white_01.webp'
 import used_oled_white_02 from '../assets/images/consoles/used/oled/white/used_oled_white_02.webp'
 import used_oled_white_03 from '../assets/images/consoles/used/oled/white/used_oled_white_03.webp'
@@ -33,6 +43,14 @@ import used_oled_white_07 from '../assets/images/consoles/used/oled/white/used_o
 import used_oled_white_08 from '../assets/images/consoles/used/oled/white/used_oled_white_08.webp'
 import used_oled_white_09 from '../assets/images/consoles/used/oled/white/used_oled_white_09.webp'
 import used_oled_white_10 from '../assets/images/consoles/used/oled/white/used_oled_white_10.webp'
+import used_v2_01 from '../assets/images/consoles/used/v2/used_v2_01.webp'
+import used_v2_02 from '../assets/images/consoles/used/v2/used_v2_02.webp'
+import used_v2_03 from '../assets/images/consoles/used/v2/used_v2_03.webp'
+import used_v2_04 from '../assets/images/consoles/used/v2/used_v2_04.webp'
+import used_v2_05 from '../assets/images/consoles/used/v2/used_v2_05.webp'
+import used_v2_06 from '../assets/images/consoles/used/v2/used_v2_06.webp'
+import used_v2_07 from '../assets/images/consoles/used/v2/used_v2_07.webp'
+import used_v2_08 from '../assets/images/consoles/used/v2/used_v2_08.webp'
 
 export const posts: PostsDataType = {
   new: [
@@ -114,22 +132,40 @@ export const posts: PostsDataType = {
       color: 'blue-red',
       condition: 'вживаний',
       description:
-        'Консоль вживана має гарний косметичний стан, консоль не має дефектів чи якихось проблем. З переду ідеал, на екрані без подряпин. На задній кришці є легкі потертості.\n' +
+        'Консоль вживана має гарний косметичний стан, консоль не має дефектів чи якихось проблем.\n' +
         descriptionUsed,
       photos: [
-        used_oled_white_01,
-        used_oled_white_02,
-        used_oled_white_03,
-        used_oled_white_04,
-        used_oled_white_05,
-        used_oled_white_06,
-        used_oled_white_07,
-        used_oled_white_08,
-        used_oled_white_09,
-        used_oled_white_10,
+        used_oled_blueRed_01,
+        used_oled_blueRed_02,
+        used_oled_blueRed_03,
+        used_oled_blueRed_04,
+        used_oled_blueRed_05,
+        used_oled_blueRed_06,
+        used_oled_blueRed_07,
+        used_oled_blueRed_08,
+        used_oled_blueRed_09,
+        used_oled_blueRed_10,
       ],
       price: 13999,
       title: 'Nintendo Switch OLED Blue Red',
+    },
+    {
+      condition: 'вживаний',
+      description:
+        'Консоль має гарний косметичний стан, консоль немає дефектів чи якихось проблем. З переду ідеал, на екрані без подряпин. На задній кришці є легкі потертості.\n' +
+        descriptionUsed,
+      photos: [
+        used_v2_01,
+        used_v2_02,
+        used_v2_03,
+        used_v2_04,
+        used_v2_05,
+        used_v2_06,
+        used_v2_07,
+        used_v2_08,
+      ],
+      price: 9999,
+      title: 'Nintendo Switch V2',
     },
   ],
 }

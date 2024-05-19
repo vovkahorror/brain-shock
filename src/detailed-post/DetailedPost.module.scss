@@ -62,8 +62,13 @@
       font-weight: 700;
     }
 
-    .condition {
+    .valueTitle {
       font-size: 22px;
+    }
+
+    .value {
+      @extend .valueTitle;
+
       font-style: italic;
     }
 
