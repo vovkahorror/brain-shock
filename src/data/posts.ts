@@ -31,6 +31,14 @@ import used_lite_blue_05 from '../assets/images/consoles/used/lite/blue/used_lit
 import used_lite_blue_06 from '../assets/images/consoles/used/lite/blue/used_lite_blue_06.webp'
 import used_lite_blue_07 from '../assets/images/consoles/used/lite/blue/used_lite_blue_07.webp'
 import used_lite_blue_08 from '../assets/images/consoles/used/lite/blue/used_lite_blue_08.webp'
+import used_lite_coral_01 from '../assets/images/consoles/used/lite/coral/used_lite_coral_01.webp'
+import used_lite_coral_02 from '../assets/images/consoles/used/lite/coral/used_lite_coral_02.webp'
+import used_lite_coral_03 from '../assets/images/consoles/used/lite/coral/used_lite_coral_03.webp'
+import used_lite_coral_04 from '../assets/images/consoles/used/lite/coral/used_lite_coral_04.webp'
+import used_lite_coral_05 from '../assets/images/consoles/used/lite/coral/used_lite_coral_05.webp'
+import used_lite_coral_06 from '../assets/images/consoles/used/lite/coral/used_lite_coral_06.webp'
+import used_lite_coral_07 from '../assets/images/consoles/used/lite/coral/used_lite_coral_07.webp'
+import used_lite_coral_08 from '../assets/images/consoles/used/lite/coral/used_lite_coral_08.webp'
 import used_lite_grey_01 from '../assets/images/consoles/used/lite/grey/used_lite_grey_01.webp'
 import used_lite_grey_02 from '../assets/images/consoles/used/lite/grey/used_lite_grey_02.webp'
 import used_lite_grey_03 from '../assets/images/consoles/used/lite/grey/used_lite_grey_03.webp'
@@ -276,6 +284,25 @@ export const posts: PostsDataType = {
       ],
       price: 7999,
       title: 'Nintendo Switch Lite Turquoise',
+    },
+    {
+      color: 'coral',
+      condition: 'вживаний',
+      description:
+        'Консоль має гарний косметичний стан, консоль не має дефектів чи якихось проблем. З переду ідеал, на екрані без подряпин. На задній кришці є легкі потертості.\n' +
+        descriptionUsed,
+      photos: [
+        used_lite_coral_01,
+        used_lite_coral_02,
+        used_lite_coral_03,
+        used_lite_coral_04,
+        used_lite_coral_05,
+        used_lite_coral_06,
+        used_lite_coral_07,
+        used_lite_coral_08,
+      ],
+      price: 7999,
+      title: 'Nintendo Switch Lite Coral',
     },
   ],
 }
