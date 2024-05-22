@@ -1,0 +1,29 @@
+@import '../../common/styles/variables';
+
+.button {
+  cursor: pointer;
+
+  position: absolute;
+  top: -40px;
+  left: 0;
+
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  background-color: unset;
+  border: none;
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:hover * {
+    color: $primary-color;
+    stroke: $primary-color;
+  }
+}

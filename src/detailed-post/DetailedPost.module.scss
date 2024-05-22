@@ -4,6 +4,7 @@
 .container {
   @include container;
 
+  position: relative;
   flex-direction: column;
   gap: 42px;
 

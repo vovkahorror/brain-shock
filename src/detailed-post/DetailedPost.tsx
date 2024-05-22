@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
+import { GoBack } from '@/common/components/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
 import { messageLink } from '@/common/consts/links'
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -56,6 +57,7 @@ export const DetailedPost = memo(() => {
   return (
     <section>
       <div className={styles.container}>
+        <GoBack />
         <h2 className={styles.title}>{navigationProps.post.title}</h2>
         <div className={styles.content}>
           <div className={styles.galleryWrapper}>

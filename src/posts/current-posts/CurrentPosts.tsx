@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { useLocation } from 'react-router-dom'
 
+import { GoBack } from '@/common/components/GoBack'
 import { posts } from '@/data/posts'
 import { Post } from '@/posts/current-posts/post/Post'
 import { v1 } from 'uuid'
@@ -19,6 +20,7 @@ export const CurrentPosts = () => {
   return (
     <section>
       <div className={styles.container}>
+        <GoBack />
         <h2 className={styles.title}>{`${
           sanitizedPath === 'new' ? 'Нові' : 'Вживані'
         } консолі`}</h2>

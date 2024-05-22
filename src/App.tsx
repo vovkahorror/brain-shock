@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ReactPlayer from 'react-player'
-import { RouteObject, useRoutes } from 'react-router-dom'
+import { Navigate, RouteObject, useRoutes } from 'react-router-dom'
 
 import { Availability } from '@/availability/Availability'
 import { ContextProvider } from '@/common/components/ContextProvider'
@@ -23,6 +23,7 @@ export function App() {
         { element: <MainPost />, index: true },
         { element: <PostsWrapper />, path: 'new/*' },
         { element: <PostsWrapper />, path: 'used/*' },
+        { element: <Navigate to={'/'} />, path: '*' },
       ],
       path: '/',
     },

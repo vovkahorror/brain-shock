@@ -3,6 +3,7 @@
 .container {
   @include container($justifyContent: center);
 
+  position: relative;
   flex-direction: column;
   gap: 40px;
 
