@@ -18,7 +18,12 @@ export const CurrentPosts = () => {
 
   return (
     <section>
-      <div className={styles.container}>{getPosts()}</div>
+      <div className={styles.container}>
+        <h2 className={styles.title}>{`${
+          sanitizedPath === 'new' ? 'Нові' : 'Вживані'
+        } консолі`}</h2>
+        <div className={styles.posts}>{getPosts()}</div>
+      </div>
     </section>
   )
 }
