@@ -5,6 +5,7 @@ import { Navigate, RouteObject, useRoutes } from 'react-router-dom'
 import { Availability } from '@/availability/Availability'
 import { ContextProvider } from '@/common/components/ContextProvider'
 import { PostsWrapper } from '@/common/components/PostsWrapper'
+import { ScrollToTop } from '@/common/components/ScrollToTop'
 import { Footer } from '@/footer/Footer'
 import { Header } from '@/header/Header'
 import { ModInfo } from '@/mod-info/ModInfo'
@@ -56,6 +57,7 @@ export function App() {
         <Availability />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
