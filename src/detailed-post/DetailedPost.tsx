@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
-import { messageLink } from '@/common/consts/links'
+import { messageLink, telegramLinkAdmin } from '@/common/consts/links'
 import { useNavigation } from '@/common/hooks/useNavigation'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
@@ -94,6 +94,26 @@ export const DetailedPost = memo(() => {
             </div>
           </div>
         </div>
+        {navigationProps.navPath === 'used' && (
+          <p className={styles.note}>
+            * На фото представлений приклад вживаної консолі і її вартість. Обіг консолей достатньо
+            активний, не завжди є можливість фотографувати кожну консоль та викладати фото на сайт.
+            Тож просимо Вас поставится з розумінням. Трапляються консолі у котрих косметичний стан
+            гірший, або мають не повний комплект. Але й такі консолі будуть коштувати дешевше. В
+            нашій{' '}
+            <a
+              className={styles.telegramLink}
+              href={telegramLinkAdmin}
+              rel={'noreferrer'}
+              target={'_blank'}
+            >
+              групі в Telegram
+            </a>{' '}
+            регулярно викладаються фото і відео консолей котрі є в наявності, заважди демонструються
+            косметичні недоліки. Також, за Вашим запитом, в месенджері ми можемо продемонструвати
+            додаткові фото і відео вживаних консолей, які Вас зацікавили.
+          </p>
+        )}
       </div>
     </section>
   )

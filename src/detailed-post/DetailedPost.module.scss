@@ -88,4 +88,20 @@
       right: 0;
     }
   }
+
+  .note {
+    font-size: 20px;
+    text-align: justify;
+
+    .telegramLink {
+      font-weight: 700;
+      color: $primary-color;
+      text-decoration: underline;
+      transition: 0.2s ease-in;
+
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
 }
