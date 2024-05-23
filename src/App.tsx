@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import { Navigate, RouteObject, useRoutes } from 'react-router-dom'
 
 import { Availability } from '@/availability/Availability'
+import { Chipping } from '@/chipping/Chipping'
 import { ContextProvider } from '@/common/components/ContextProvider'
 import { PostsWrapper } from '@/common/components/PostsWrapper'
 import { ScrollToTop } from '@/common/components/ScrollToTop'
@@ -54,6 +55,7 @@ export function App() {
       <main className={styles.main}>
         <ContextProvider>{routesElements}</ContextProvider>
         <ModInfo />
+        <Chipping />
         <Availability />
       </main>
       <Footer />

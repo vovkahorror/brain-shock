@@ -1,0 +1,44 @@
+@import '../common/styles/mixins';
+
+.container {
+  @include container;
+
+  justify-content: center;
+
+  .paragraph {
+    font-size: 24px;
+    text-align: center;
+
+    .header {
+      font-size: 28px;
+    }
+
+    .list {
+      @include flex($gap: 10px);
+
+      flex-direction: column;
+      margin-top: 20px;
+      list-style-type: none;
+
+      & > ::before {
+        content: '';
+
+        display: inline-block;
+
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        margin-bottom: -2px;
+
+        background-image: url('../assets/images/chip-icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      .price {
+        font-style: italic;
+      }
+    }
+  }
+}
