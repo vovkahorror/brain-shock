@@ -6,6 +6,7 @@
   @include flex($gap: 30px);
 
   a {
+    position: relative;
     text-decoration: none;
   }
 
