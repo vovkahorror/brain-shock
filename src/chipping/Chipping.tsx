@@ -19,6 +19,10 @@ export const Chipping = () => {
               Nintendo Switch OLED – <span className={styles.price}>3300 грн</span>
             </li>
           </ul>
+          <span className={styles.details}>
+            У вартість входить повне налаштування разом з бекапом, емунандом. Чистка від пилу,
+            свіженька термопаста. Гарантія на роботу та чіп – 6 місяців.
+          </span>
         </div>
       </div>
     </section>
