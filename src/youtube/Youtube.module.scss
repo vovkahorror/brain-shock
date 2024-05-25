@@ -1,0 +1,21 @@
+@import '../common/styles/mixins';
+@import '../common/styles/variables';
+
+.container {
+  @include container;
+  @include flex($gap: 30px);
+
+  a {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .paragraph {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .button {
+    @include button;
+  }
+}

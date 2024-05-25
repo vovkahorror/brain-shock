@@ -11,6 +11,7 @@ import { Footer } from '@/footer/Footer'
 import { Header } from '@/header/Header'
 import { ModInfo } from '@/mod-info/ModInfo'
 import { MainPost } from '@/posts/MainPost'
+import { Youtube } from '@/youtube/Youtube'
 
 import styles from './App.module.scss'
 
@@ -57,6 +58,7 @@ export function App() {
         <ModInfo />
         <Chipping />
         <Availability />
+        <Youtube />
       </main>
       <Footer />
       <ScrollToTop />
