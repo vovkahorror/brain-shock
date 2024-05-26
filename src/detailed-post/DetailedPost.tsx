@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
-import { messageLink, telegramLinkAdmin } from '@/common/consts/links'
+import { messageLink, telegramLink } from '@/common/consts/links'
 import { useNavigation } from '@/common/hooks/useNavigation'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
@@ -103,7 +103,7 @@ export const DetailedPost = memo(() => {
             нашій{' '}
             <a
               className={styles.telegramLink}
-              href={telegramLinkAdmin}
+              href={telegramLink}
               rel={'noreferrer'}
               target={'_blank'}
             >
