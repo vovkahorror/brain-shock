@@ -10,6 +10,7 @@ import { ScrollToTop } from '@/common/components/ScrollToTop'
 import { Footer } from '@/footer/Footer'
 import { Header } from '@/header/Header'
 import { ModInfo } from '@/mod-info/ModInfo'
+import { PageBorder } from '@/page-border/PageBorder'
 import { MainPost } from '@/posts/MainPost'
 import { Youtube } from '@/youtube/Youtube'
 
@@ -51,6 +52,7 @@ export function App() {
           width={1920}
         />
       </div>
+      <PageBorder />
 
       <Header />
       <main className={styles.main}>

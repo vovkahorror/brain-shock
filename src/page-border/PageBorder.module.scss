@@ -1,0 +1,59 @@
+.border {
+  pointer-events: none;
+  user-select: none;
+
+  position: fixed;
+  z-index: 10;
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.top {
+  @extend .border;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100px;
+
+  background-image: url('../assets/images/border-top.webp');
+}
+
+.right {
+  @extend .border;
+
+  top: 0;
+  right: 0;
+
+  width: 100px;
+  height: 100%;
+
+  background-image: url('../assets/images/border-right.webp');
+}
+
+.bottom {
+  @extend .border;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100px;
+
+  background-image: url('../assets/images/border-bottom.webp');
+}
+
+.left {
+  @extend .border;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100px;
+  height: 100%;
+
+  background-image: url('../assets/images/border-left.webp');
+  background-position: left;
+}
