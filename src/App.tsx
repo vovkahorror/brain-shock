@@ -11,6 +11,7 @@ import { Footer } from '@/footer/Footer'
 import { Header } from '@/header/Header'
 import { ModInfo } from '@/mod-info/ModInfo'
 import { PageBorder } from '@/page-border/PageBorder'
+import { PagePreloader } from '@/page-preloader/PagePreloader'
 import { MainPost } from '@/posts/MainPost'
 import { Youtube } from '@/youtube/Youtube'
 
@@ -39,6 +40,7 @@ export function App() {
 
   return (
     <div>
+      <PagePreloader />
       <div className={styles.pageBackground}>
         <ReactPlayer
           className={styles.bgVideo}
