@@ -7,7 +7,6 @@ import FireImage from '../assets/images/fire.png'
 export const PagePreloader = () => {
   const position = useRef(100)
   const preloaderRef = useRef<HTMLDivElement>(null)
-  const preloaderFillingRef = useRef<HTMLDivElement>(null)
   const preloaderImgRef = useRef<HTMLDivElement>(null)
 
   const [isImageLoaded, setIsImageLoaded] = useState(false)
@@ -18,7 +17,7 @@ export const PagePreloader = () => {
     }
 
     const loading = setInterval(() => {
-      if (!preloaderRef.current || !preloaderImgRef.current || !preloaderFillingRef.current) {
+      if (!preloaderRef.current || !preloaderImgRef.current) {
         return
       }
 
@@ -36,18 +35,14 @@ export const PagePreloader = () => {
 
   return (
     <div className={styles.preloader} ref={preloaderRef}>
+      <div className={styles.preloaderFilling} style={{ display: isImageLoaded ? 'none' : 'flex' }}>
+        Loading...
+      </div>
       <div
         className={styles.preloaderImg}
         ref={preloaderImgRef}
         style={{ backgroundImage: `url(${FireImage})` }}
       ></div>
-      <div
-        className={styles.preloaderFilling}
-        ref={preloaderFillingRef}
-        style={{ display: isImageLoaded ? 'none' : 'flex' }}
-      >
-        Loading...
-      </div>
       <img
         alt={''}
         onLoad={() => setIsImageLoaded(true)}
