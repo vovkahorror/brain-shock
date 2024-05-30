@@ -18,6 +18,10 @@
 
       img {
         width: 100px;
+
+        @media (width <= 768px) {
+          width: 60px;
+        }
       }
 
       .title {
@@ -36,7 +40,20 @@
           stroke-width: 1;
 
           animation: stroke 5s alternate;
+
+          @media (width <= 768px) {
+            font-size: 28px;
+          }
         }
+
+        @media (width <= 768px) {
+          width: 164px;
+          height: 60px;
+        }
+      }
+
+      @media (width <= 768px) {
+        gap: 10px;
       }
     }
 
@@ -44,19 +61,15 @@
       position: relative;
       transform: rotate(5deg);
 
-      &:hover > :nth-child(1) {
-        transform: translateX(-4px) rotate(-5deg);
-      }
-
-      &:hover > :nth-child(2) {
-        transform: translateX(4px) rotate(-5deg);
-      }
-
       .iconWrapperTop {
         overflow: hidden;
         display: flex;
         height: 20px;
         transition: 0.2s transform ease-out;
+
+        @media (width <= 768px) {
+          height: 15px;
+        }
       }
 
       .iconWrapperBottom {
@@ -64,17 +77,45 @@
 
         bottom: -20px;
         align-items: flex-end;
+
+        @media (width <= 768px) {
+          bottom: -15px;
+        }
       }
 
       .icon {
         width: 40px;
         height: 40px;
         transition: 0.2s;
+
+        @media (width <= 768px) {
+          width: 30px;
+          height: 30px;
+        }
       }
 
-      &:hover .icon {
-        fill: $primary-color;
+      @media (hover: hover) {
+        &:hover > :nth-child(1) {
+          transform: translateX(-4px) rotate(-5deg);
+        }
+
+        &:hover > :nth-child(2) {
+          transform: translateX(4px) rotate(-5deg);
+        }
+
+        &:hover .icon {
+          fill: $primary-color;
+        }
       }
+    }
+  }
+
+  @media (width <= 768px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    & * {
+      z-index: 20;
     }
   }
 }
