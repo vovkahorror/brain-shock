@@ -29,5 +29,9 @@
 
   & > * {
     padding: 60px;
+
+    @media (width <= 768px) {
+      padding: 40px 10px;
+    }
   }
 }
