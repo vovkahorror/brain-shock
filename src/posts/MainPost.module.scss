@@ -42,19 +42,6 @@
     transition: 0.3s;
   }
 
-  &:hover {
-    cursor: pointer;
-
-    & .image {
-      background-size: 110% auto;
-      border: 2px solid $primary-color;
-    }
-
-    & .title {
-      color: $primary-color;
-    }
-  }
-
   .title {
     font-size: 32px;
     font-weight: 700;
@@ -68,8 +55,34 @@
     display: block;
   }
 
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+
+      & .image {
+        background-size: 110% auto;
+        border: 2px solid $primary-color;
+      }
+
+      & .title {
+        color: $primary-color;
+      }
+    }
+  }
+
+  @media (hover: none) {
+    & .image {
+      border: 2px solid $primary-color;
+    }
+
+    & .title {
+      color: $primary-color;
+    }
+  }
+
   @media (width <= 768px) {
     gap: 20px;
     width: 100%;
+    padding: 20px;
   }
 }
