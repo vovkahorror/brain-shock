@@ -9,6 +9,10 @@
 
     .header {
       font-size: 28px;
+
+      @media (width <= 768px) {
+        font-size: 24px;
+      }
     }
 
     .list {
@@ -32,6 +36,10 @@
         background-position: center;
         background-size: contain;
       }
+    }
+
+    @media (width <= 768px) {
+      font-size: 20px;
     }
   }
 }
