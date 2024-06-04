@@ -35,6 +35,11 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+
+        @media (width <= 768px) {
+          margin-right: 10px;
+          margin-bottom: -4px;
+        }
       }
     }
 
