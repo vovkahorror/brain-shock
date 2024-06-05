@@ -11,6 +11,10 @@
 
     .header {
       font-size: 28px;
+
+      @media (width <= 768px) {
+        font-size: 24px;
+      }
     }
 
     .list {
@@ -34,6 +38,11 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+
+        @media (width <= 768px) {
+          margin-right: 10px;
+          margin-bottom: -4px;
+        }
       }
 
       .price {
@@ -44,6 +53,10 @@
     .details {
       display: block;
       margin-top: 20px;
+    }
+
+    @media (width <= 768px) {
+      font-size: 20px;
     }
   }
 }
