@@ -4,11 +4,18 @@
 .footer {
   padding-top: 16px;
   padding-bottom: 16px;
+  font-size: 16px;
   background-color: $background-color;
 
   .container {
     @include container;
 
     flex-direction: column;
+  }
+
+  @media (width <= 768px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
   }
 }
