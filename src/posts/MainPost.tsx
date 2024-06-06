@@ -22,6 +22,7 @@ const MainPostItem = ({ image, navPath, title }: MainPostItemProps) => {
   const imageRef = useRef(null)
   const [backgroundSize, setBackgroundSize] = useState('100% auto')
   const [imageLoaded, setImageLoaded] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleImageLoad = useCallback(() => setImageLoaded(true), [])
 
@@ -57,11 +58,18 @@ const MainPostItem = ({ image, navPath, title }: MainPostItemProps) => {
   }, [updateBackgroundSize])
 
   return (
-    <article className={styles.post}>
+    <article
+      className={styles.post}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div
         className={styles.image}
         ref={imageRef}
-        style={{ backgroundImage: `url(${image})`, backgroundSize }}
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: isHovered ? '110% auto' : backgroundSize,
+        }}
       >
         {!imageLoaded && <PreloaderIcon />}
       </div>
