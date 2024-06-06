@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin flex($direction: row, $justifyContent: center, $alignItems: center, $wrap: wrap, $gap: 0) {
   display: flex;
   flex-flow: $direction $wrap;
@@ -75,26 +77,38 @@
     width: 40px;
     height: 40px;
     transition: all 0.2s ease-in;
-  }
 
-  &:hover {
-    color: white;
-    background-color: $primary-color;
-    box-shadow: 0 0 30px 0 rgb(224 136 33 / 50%);
-    transition: all 0.2s ease-out;
-
-    &::before {
-      animation: shine 0.5s 0s linear;
-    }
-
-    & .icon {
-      fill: white;
+    @media (width <= 768px) {
+      width: 34px;
+      height: 34px;
     }
   }
 
-  &:active {
-    box-shadow: 0 0 0 0 transparent;
-    transition: box-shadow 0.2s ease-in;
+  @media (width <= 768px) {
+    padding: 6px 10px;
+    font-size: 20px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: white;
+      background-color: $primary-color;
+      box-shadow: 0 0 30px 0 rgb(224 136 33 / 50%);
+      transition: all 0.2s ease-out;
+
+      &::before {
+        animation: shine 0.5s 0s linear;
+      }
+
+      & .icon {
+        fill: white;
+      }
+    }
+
+    &:active {
+      box-shadow: 0 0 0 0 transparent;
+      transition: box-shadow 0.2s ease-in;
+    }
   }
 }
 

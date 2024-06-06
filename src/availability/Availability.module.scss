@@ -20,13 +20,23 @@
       text-decoration: underline;
       transition: 0.2s ease-in;
 
-      &:hover {
-        color: $text-color;
+      @media (hover: hover) {
+        &:hover {
+          color: $text-color;
+        }
       }
+    }
+
+    @media (width <= 768px) {
+      font-size: 20px;
     }
   }
 
   .button {
     @include button;
+  }
+
+  @media (width <= 768px) {
+    gap: 20px;
   }
 }
