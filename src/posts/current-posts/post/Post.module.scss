@@ -9,7 +9,7 @@
   gap: 10px;
   align-items: center;
 
-  min-width: calc(50% - 30px);
+  width: calc(50% - 30px);
   padding: 30px;
 
   border: 1px solid $text-color;
@@ -36,6 +36,10 @@
     font-weight: 700;
     text-align: center;
     text-decoration: none;
+
+    @media (width <= 768px) {
+      font-size: 28px;
+    }
   }
 
   .price {
@@ -43,16 +47,9 @@
     font-size: 24px;
     font-weight: 700;
     color: red;
-  }
 
-  &:hover {
-    & .image {
-      background-size: 110% auto;
-      border: 2px solid $primary-color;
-    }
-
-    & .title {
-      color: $primary-color;
+    @media (width <= 768px) {
+      font-size: 22px;
     }
   }
 
@@ -60,5 +57,40 @@
     position: absolute;
     inset: 0;
     display: block;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      & .image {
+        background-size: 110% auto;
+        border: 2px solid $primary-color;
+      }
+
+      & .title {
+        color: $primary-color;
+      }
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      & .image {
+        background-size: 110% auto;
+        border: 2px solid $primary-color;
+      }
+
+      & .title {
+        color: $primary-color;
+      }
+    }
+  }
+
+  @media (width <= 1200px) {
+    width: calc(50% - 20px);
+  }
+
+  @media (width <= 768px) {
+    width: 100%;
+    padding: 20px;
   }
 }
