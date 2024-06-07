@@ -33,9 +33,18 @@
     }
   }
 
-  &:hover * {
-    color: $primary-color;
-    stroke: $primary-color;
+  @media (hover: hover) {
+    &:hover * {
+      color: $primary-color;
+      stroke: $primary-color;
+    }
+  }
+
+  @media (hover: none) {
+    &:active * {
+      color: $primary-color;
+      stroke: $primary-color;
+    }
   }
 
   @media (width <= 768px) {
