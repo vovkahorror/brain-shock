@@ -13,7 +13,7 @@ export const GoBack = () => {
   return (
     <button className={styles.button} onClick={goBack}>
       <BackIcon className={styles.icon} />
-      <span>Назад</span>
+      <span className={styles.text}>Назад</span>
     </button>
   )
 }

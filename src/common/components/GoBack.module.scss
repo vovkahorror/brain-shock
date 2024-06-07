@@ -20,10 +20,26 @@
   .icon {
     width: 40px;
     height: 40px;
+
+    @media (width <= 768px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .text {
+    @media (width <= 768px) {
+      display: none;
+    }
   }
 
   &:hover * {
     color: $primary-color;
     stroke: $primary-color;
+  }
+
+  @media (width <= 768px) {
+    top: -10px;
+    left: 10px;
   }
 }

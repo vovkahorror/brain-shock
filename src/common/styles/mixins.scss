@@ -84,6 +84,11 @@
     }
   }
 
+  &:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+  }
+
   @media (width <= 768px) {
     padding: 6px 10px;
     font-size: 20px;
@@ -103,11 +108,6 @@
       & .icon {
         fill: white;
       }
-    }
-
-    &:active {
-      box-shadow: 0 0 0 0 transparent;
-      transition: box-shadow 0.2s ease-in;
     }
   }
 }
