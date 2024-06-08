@@ -25,6 +25,12 @@
           color: $text-color;
         }
       }
+
+      @media (hover: none) {
+        &:active {
+          color: $text-color;
+        }
+      }
     }
 
     @media (width <= 768px) {
