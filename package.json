@@ -51,6 +51,6 @@
     ]
   },
   "resolutions": {
-    "puppeteer": "^13"
+    "puppeteer": "^22"
   }
 }
