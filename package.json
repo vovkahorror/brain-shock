@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "postbuild": "react-snap",
     "format": "prettier --write src",
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
     "preview": "vite preview"
@@ -40,5 +41,11 @@
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-svgr": "^4.2.0"
+  },
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }
