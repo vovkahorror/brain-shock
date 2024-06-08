@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack'
@@ -11,6 +12,7 @@ import styles from './CurrentPosts.module.scss'
 export const CurrentPosts = () => {
   const location = useLocation()
   const sanitizedPath = location.pathname.replace(/\//g, '') as keyof typeof posts
+  const title = `${sanitizedPath === 'new' ? 'Нові' : 'Вживані'} консолі`
 
   const getPosts = useCallback(
     () => posts[sanitizedPath].map(post => <Post key={v1()} navPath={sanitizedPath} post={post} />),
@@ -18,14 +20,18 @@ export const CurrentPosts = () => {
   )
 
   return (
-    <section>
-      <div className={styles.container}>
-        <GoBack />
-        <h2 className={styles.title}>{`${
-          sanitizedPath === 'new' ? 'Нові' : 'Вживані'
-        } консолі`}</h2>
-        <div className={styles.posts}>{getPosts()}</div>
-      </div>
-    </section>
+    <>
+      <Helmet>
+        <title>{`${title} | BrainShock – магазин чипованих Nintendo Switch`}</title>
+      </Helmet>
+
+      <section>
+        <div className={styles.container}>
+          <GoBack />
+          <h2 className={styles.title}>{title}</h2>
+          <div className={styles.posts}>{getPosts()}</div>
+        </div>
+      </section>
+    </>
   )
 }

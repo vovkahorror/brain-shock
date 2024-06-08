@@ -1,4 +1,5 @@
 import { memo, useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { Navigate } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack'
@@ -54,67 +55,75 @@ export const DetailedPost = memo(() => {
     return <Navigate to={'/'} />
   }
 
+  const { color, condition, description, photos, price, title } = navigationProps.post
+
   return (
-    <section>
-      <div className={styles.container}>
-        <GoBack />
-        <h2 className={styles.title}>{navigationProps.post.title}</h2>
-        <div className={styles.content}>
-          <div className={styles.galleryWrapper}>
-            <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
-              {navigationProps?.post.photos.map((photo, ind) => (
-                <a data-lg-size={imagesSizes[ind]} href={photo} key={v1()}>
-                  <ImageWithPreloading alt={navigationProps.post.title} image={photo} />
-                </a>
-              ))}
-            </LightGallery>
-          </div>
-          <div className={styles.text}>
-            <span className={styles.price}>{navigationProps.post.price} грн</span>
-            <span>
-              <span className={styles.valueTitle}>стан:</span>{' '}
-              <span className={styles.value}>{navigationProps.post.condition}</span>
-            </span>
-            {navigationProps.post.color && (
+    <>
+      <Helmet>
+        <title>{`${navigationProps.post.title} ${condition} | BrainShock – магазин чипованих Nintendo Switch`}</title>
+      </Helmet>
+
+      <section>
+        <div className={styles.container}>
+          <GoBack />
+          <h2 className={styles.title}>{title}</h2>
+          <div className={styles.content}>
+            <div className={styles.galleryWrapper}>
+              <LightGallery plugins={[lgThumbnail, lgZoom]} speed={500}>
+                {photos.map((photo, ind) => (
+                  <a data-lg-size={imagesSizes[ind]} href={photo} key={v1()}>
+                    <ImageWithPreloading alt={title} image={photo} />
+                  </a>
+                ))}
+              </LightGallery>
+            </div>
+            <div className={styles.text}>
+              <span className={styles.price}>{price} грн</span>
               <span>
-                <span className={styles.valueTitle}>колір:</span>{' '}
-                <span className={styles.value}>{navigationProps.post.color}</span>
+                <span className={styles.valueTitle}>стан:</span>{' '}
+                <span className={styles.value}>{condition}</span>
               </span>
-            )}
-            <a href={messageLink} rel={'noreferrer'} target={'_blank'}>
-              <button className={styles.button}>
-                <BasketIcon className={styles.icon} />
-                Замовити
-              </button>
-            </a>
-            <div className={styles.description}>
-              {navigationProps.post.description.split('\n').map((line, idx) => (
-                <p key={idx}>{line}</p>
-              ))}
+              {color && (
+                <span>
+                  <span className={styles.valueTitle}>колір:</span>{' '}
+                  <span className={styles.value}>{navigationProps.post.color}</span>
+                </span>
+              )}
+              <a href={messageLink} rel={'noreferrer'} target={'_blank'}>
+                <button className={styles.button}>
+                  <BasketIcon className={styles.icon} />
+                  Замовити
+                </button>
+              </a>
+              <div className={styles.description}>
+                {description.split('\n').map((line, idx) => (
+                  <p key={idx}>{line}</p>
+                ))}
+              </div>
             </div>
           </div>
+          {navigationProps.navPath === 'used' && (
+            <p className={styles.note}>
+              * На фото представлений приклад вживаної консолі і її вартість. Обіг консолей
+              достатньо активний, не завжди є можливість фотографувати кожну консоль та викладати
+              фото на сайт. Тож просимо Вас поставится з розумінням. Трапляються консолі у котрих
+              косметичний стан гірший, або мають не повний комплект. Але й такі консолі будуть
+              коштувати дешевше. В нашій{' '}
+              <a
+                className={styles.telegramLink}
+                href={telegramLink}
+                rel={'noreferrer'}
+                target={'_blank'}
+              >
+                групі в Telegram
+              </a>{' '}
+              регулярно викладаються фото і відео консолей котрі є в наявності, заважди
+              демонструються косметичні недоліки. Також, за Вашим запитом, в месенджері ми можемо
+              продемонструвати додаткові фото і відео вживаних консолей, які Вас зацікавили.
+            </p>
+          )}
         </div>
-        {navigationProps.navPath === 'used' && (
-          <p className={styles.note}>
-            * На фото представлений приклад вживаної консолі і її вартість. Обіг консолей достатньо
-            активний, не завжди є можливість фотографувати кожну консоль та викладати фото на сайт.
-            Тож просимо Вас поставится з розумінням. Трапляються консолі у котрих косметичний стан
-            гірший, або мають не повний комплект. Але й такі консолі будуть коштувати дешевше. В
-            нашій{' '}
-            <a
-              className={styles.telegramLink}
-              href={telegramLink}
-              rel={'noreferrer'}
-              target={'_blank'}
-            >
-              групі в Telegram
-            </a>{' '}
-            регулярно викладаються фото і відео консолей котрі є в наявності, заважди демонструються
-            косметичні недоліки. Також, за Вашим запитом, в месенджері ми можемо продемонструвати
-            додаткові фото і відео вживаних консолей, які Вас зацікавили.
-          </p>
-        )}
-      </div>
-    </section>
+      </section>
+    </>
   )
 })
