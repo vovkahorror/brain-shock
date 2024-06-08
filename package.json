@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "lightgallery": "^2.7.2",
+    "puppeteer": "^13.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -48,8 +49,5 @@
       "--no-sandbox",
       "--disable-setuid-sandbox"
     ]
-  },
-  "resolutions": {
-    "puppeteer": "^13"
   }
 }
