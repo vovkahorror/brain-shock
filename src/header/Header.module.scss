@@ -107,6 +107,20 @@
           fill: $primary-color;
         }
       }
+
+      @media (hover: none) {
+        &:active > :nth-child(1) {
+          transform: translateX(-4px) rotate(-5deg);
+        }
+
+        &:active > :nth-child(2) {
+          transform: translateX(4px) rotate(-5deg);
+        }
+
+        &:active .icon {
+          fill: $primary-color;
+        }
+      }
     }
   }
 
