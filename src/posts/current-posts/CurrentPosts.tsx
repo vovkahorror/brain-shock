@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 
-import { GoBack } from '@/common/components/GoBack'
+import { GoBack } from '@/common/components/GoBack/GoBack'
 import { posts } from '@/data/posts'
 import { Post } from '@/posts/current-posts/post/Post'
 import { v1 } from 'uuid'

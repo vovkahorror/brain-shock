@@ -2,7 +2,7 @@ import { memo, useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Navigate } from 'react-router-dom'
 
-import { GoBack } from '@/common/components/GoBack'
+import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
 import { messageLink, telegramLink } from '@/common/consts/links'
 import { useNavigation } from '@/common/hooks/useNavigation'

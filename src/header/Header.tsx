@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom'
 
-import { telegramLink } from '@/common/consts/links'
+import { ClickableIcon } from '@/common/components/ClickableIcon/ClickableIcon'
+import { promLink, shafaLink, telegramLink } from '@/common/consts/links'
 
 import styles from './Header.module.scss'
 
 import logoImage from '../assets/images/logo.webp'
+import PromIcon from '../assets/images/prom.svg?react'
+import ShafaIcon from '../assets/images/shafa.svg?react'
 import TelegramIcon from '../assets/images/telegram.svg?react'
 
 export const Header = () => {
@@ -21,15 +24,10 @@ export const Header = () => {
             </svg>
           </span>
         </NavLink>
-        <div>
-          <a className={styles.link} href={telegramLink} rel={'noreferrer'} target={'_blank'}>
-            <span className={styles.iconWrapperTop}>
-              <TelegramIcon className={styles.icon} />
-            </span>
-            <span className={styles.iconWrapperBottom}>
-              <TelegramIcon className={styles.icon} />
-            </span>
-          </a>
+        <div className={styles.iconsBlock}>
+          <ClickableIcon Icon={TelegramIcon} link={telegramLink} />
+          <ClickableIcon Icon={PromIcon} link={promLink} />
+          <ClickableIcon Icon={ShafaIcon} link={shafaLink} />
         </div>
       </div>
     </header>

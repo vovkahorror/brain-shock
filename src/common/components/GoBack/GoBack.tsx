@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './GoBack.module.scss'
 
-import BackIcon from '../../assets/images/back-icon.svg?react'
+import BackIcon from '../../../assets/images/back-icon.svg?react'
 
 export const GoBack = () => {
   const navigate = useNavigate()
