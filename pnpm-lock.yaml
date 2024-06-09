@@ -26,6 +26,9 @@ importers:
       react-router-dom:
         specifier: ^6.23.0
         version: 6.23.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-snap:
+        specifier: ^1.23.0
+        version: 1.23.0
       uuid:
         specifier: ^9.0.1
         version: 9.0.1
@@ -72,9 +75,6 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.6
         version: 0.4.6(eslint@8.57.0)
-      react-snap:
-        specifier: ^1.23.0
-        version: 1.23.0
       sass:
         specifier: ^1.75.0
         version: 1.75.0
