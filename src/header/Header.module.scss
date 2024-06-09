@@ -61,6 +61,10 @@
   .iconsBlock {
     display: flex;
     gap: 20px;
+
+    @media (width <= 768px) {
+      gap: 10px;
+    }
   }
 
   @media (width <= 768px) {
