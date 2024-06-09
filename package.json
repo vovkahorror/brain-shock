@@ -48,9 +48,9 @@
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
-    ]
-  },
-  "resolutions": {
-    "puppeteer": "^22.10.0"
+    ],
+    "resolutions": {
+      "puppeteer": "^22.10.0"
+    }
   }
 }
