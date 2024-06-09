@@ -12,9 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sparticuz/chromium": "^123.0.1",
     "lightgallery": "^2.7.2",
-    "puppeteer-core": "^22.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
