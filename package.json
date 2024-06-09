@@ -48,8 +48,5 @@
       "--no-sandbox",
       "--disable-setuid-sandbox"
     ]
-  },
-  "resolutions": {
-    "puppeteer": "^13"
   }
 }
