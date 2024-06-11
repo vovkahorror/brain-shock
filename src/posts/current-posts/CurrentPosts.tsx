@@ -22,7 +22,7 @@ export const CurrentPosts = () => {
   return (
     <>
       <Helmet>
-        <title>{`${title} | BrainShock – магазин чипованих Nintendo Switch`}</title>
+        <title>{`${title} | BrainShock – магазин прошитих Nintendo Switch`}</title>
       </Helmet>
 
       <section>
