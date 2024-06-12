@@ -60,7 +60,7 @@ export const DetailedPost = memo(() => {
   return (
     <>
       <Helmet>
-        <title>{`${navigationProps.post.title} ${condition} | BrainShock – магазин чипованих Nintendo Switch`}</title>
+        <title>{`${navigationProps.post.title} ${condition} | BrainShock – магазин прошитих Nintendo Switch`}</title>
       </Helmet>
 
       <section>
