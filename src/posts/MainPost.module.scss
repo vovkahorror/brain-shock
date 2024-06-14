@@ -6,6 +6,19 @@
 
   gap: 60px;
 
+  .greeting {
+    font-size: 28px;
+    text-align: center;
+
+    .emphasis {
+      font-weight: 700;
+    }
+
+    @media (width <= 768px) {
+      font-size: 24px;
+    }
+  }
+
   @media (width <= 768px) {
     flex-direction: column;
     gap: 40px;

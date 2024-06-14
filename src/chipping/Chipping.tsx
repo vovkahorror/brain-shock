@@ -5,9 +5,9 @@ export const Chipping = () => {
     <section>
       <div className={styles.container}>
         <div className={styles.paragraph}>
-          <span className={styles.header}>
+          <p className={styles.header}>
             Якщо Ви вирішили прочіпувати власного Switch'a, то вартість послуги складає:
-          </span>
+          </p>
           <ul className={styles.list}>
             <li>
               Nintendo Switch V1, V2 – <span className={styles.price}>1500 грн</span>

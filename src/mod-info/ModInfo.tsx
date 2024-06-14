@@ -5,10 +5,10 @@ export const ModInfo = () => {
     <section>
       <div className={styles.container}>
         <div className={styles.paragraph}>
-          <span className={styles.header}>
+          <p className={styles.header}>
             Усі консолі, придбані у нас, спеціальним чином модифіковані, що відкриває для вас
             великий спектр можливостей. До прикладу декілька із них:
-          </span>
+          </p>
           <ul className={styles.list}>
             <li>
               Безкоштовне завантаження ігор через Wi-Fi, із додатка "Tinfoil", котрий налічує
