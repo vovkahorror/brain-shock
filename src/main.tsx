@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 
+import { ContextProvider } from '@/common/components/ContextProvider'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 
 import './index.scss'
@@ -18,7 +19,9 @@ if (rootElement.hasChildNodes()) {
 } else {
   createRoot(rootElement).render(
     <BrowserRouter>
-      <App />
+      <ContextProvider>
+        <App />
+      </ContextProvider>
     </BrowserRouter>
   )
 }

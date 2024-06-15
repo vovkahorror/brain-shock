@@ -4,7 +4,6 @@ import { Navigate, RouteObject, useRoutes } from 'react-router-dom'
 
 import { Availability } from '@/availability/Availability'
 import { Chipping } from '@/chipping/Chipping'
-import { ContextProvider } from '@/common/components/ContextProvider'
 import { PostsWrapper } from '@/common/components/PostsWrapper'
 import { ScrollToTop } from '@/common/components/ScrollToTop'
 import { Footer } from '@/footer/Footer'
@@ -26,8 +25,7 @@ export function App() {
     {
       children: [
         { element: <MainPost />, index: true },
-        { element: <PostsWrapper />, path: 'new/*' },
-        { element: <PostsWrapper />, path: 'used/*' },
+        { element: <PostsWrapper />, path: ':navPath/*' },
         { element: <Navigate to={'/'} />, path: '*' },
       ],
       path: '/',
@@ -58,7 +56,7 @@ export function App() {
 
       <Header />
       <main className={styles.main}>
-        <ContextProvider>{routesElements}</ContextProvider>
+        <>{routesElements}</>
         <ModInfo />
         <Chipping />
         <Availability />

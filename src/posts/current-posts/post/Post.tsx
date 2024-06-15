@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -8,7 +8,7 @@ import styles from './Post.module.scss'
 
 import PreloaderIcon from '../../../assets/images/preloader.svg?react'
 
-export const Post = ({ navPath, post }: PostProps) => {
+export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
   const { setNavigationProps } = useNavigation()
   const { photos, price, title } = post
   const imageRef = useRef(null)
@@ -20,8 +20,8 @@ export const Post = ({ navPath, post }: PostProps) => {
   const handleImageLoad = useCallback(() => setImageLoaded(true), [])
 
   const handleClick = useCallback(
-    () => setNavigationProps({ navPath, post }),
-    [navPath, post, setNavigationProps]
+    () => setNavigationProps({ navPath, post, postIndex }),
+    [navPath, post, postIndex, setNavigationProps]
   )
 
   const updateBackgroundSize = useCallback(() => {
@@ -75,7 +75,11 @@ export const Post = ({ navPath, post }: PostProps) => {
       <h2 className={styles.title}>{title}</h2>
       <span className={styles.price}>{price} грн</span>
 
-      <NavLink className={styles.title} onClick={handleClick} to={`/${navPath}/detailed-post`} />
+      <NavLink
+        className={styles.link}
+        onClick={handleClick}
+        to={`/${navPath}/detailed-post/${postIndex}`}
+      />
       <img
         alt={''}
         onError={handleImageLoad}
@@ -85,9 +89,10 @@ export const Post = ({ navPath, post }: PostProps) => {
       />
     </article>
   )
-}
+})
 
 interface PostProps {
   navPath: 'new' | 'used'
   post: PostType
+  postIndex: number
 }

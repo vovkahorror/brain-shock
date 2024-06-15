@@ -15,7 +15,10 @@ export const CurrentPosts = () => {
   const title = `${sanitizedPath === 'new' ? 'Нові' : 'Вживані'} консолі`
 
   const getPosts = useCallback(
-    () => posts[sanitizedPath].map(post => <Post key={v1()} navPath={sanitizedPath} post={post} />),
+    () =>
+      posts[sanitizedPath].map((post, index) => (
+        <Post key={v1()} navPath={sanitizedPath} post={post} postIndex={index} />
+      )),
     [sanitizedPath]
   )
 

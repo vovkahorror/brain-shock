@@ -1,11 +1,11 @@
 import { memo, useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
 import { messageLink, telegramLink } from '@/common/consts/links'
-import { useNavigation } from '@/common/hooks/useNavigation'
+import { posts } from '@/data/posts'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
 import LightGallery from 'lightgallery/react'
@@ -22,14 +22,16 @@ import styles from './DetailedPost.module.scss'
 import BasketIcon from '../assets/images/basket-icon.svg?react'
 
 export const DetailedPost = memo(() => {
-  const { navigationProps } = useNavigation()
+  const { navPath, postIndex } = useParams()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 
+  const currentPost = posts[navPath as keyof typeof posts][postIndex as unknown as number]
+
   useEffect(() => {
-    if (navigationProps && navigationProps.post && navigationProps.post.photos) {
+    if (currentPost && currentPost.photos) {
       const fetchImageSizes = async () => {
         const sizes = await Promise.all(
-          navigationProps.post.photos.map(photo => {
+          currentPost.photos.map(photo => {
             return new Promise<string>((resolve, reject) => {
               const img = new Image()
 
@@ -49,18 +51,18 @@ export const DetailedPost = memo(() => {
 
       fetchImageSizes()
     }
-  }, [navigationProps])
+  }, [currentPost])
 
-  if (!navigationProps) {
+  if (!currentPost) {
     return <Navigate to={'/'} />
   }
 
-  const { color, condition, description, photos, price, title } = navigationProps.post
+  const { color, condition, description, photos, price, title } = currentPost
 
   return (
     <>
       <Helmet>
-        <title>{`${navigationProps.post.title} ${condition} | BrainShock – магазин прошитих Nintendo Switch`}</title>
+        <title>{`${currentPost.title} ${condition} | BrainShock – магазин прошитих Nintendo Switch`}</title>
       </Helmet>
 
       <section>
@@ -86,7 +88,7 @@ export const DetailedPost = memo(() => {
               {color && (
                 <span>
                   <span className={styles.valueTitle}>колір:</span>{' '}
-                  <span className={styles.value}>{navigationProps.post.color}</span>
+                  <span className={styles.value}>{currentPost.color}</span>
                 </span>
               )}
               <a href={messageLink} rel={'noreferrer'} target={'_blank'}>
@@ -102,7 +104,7 @@ export const DetailedPost = memo(() => {
               </div>
             </div>
           </div>
-          {navigationProps.navPath === 'used' && (
+          {navPath === 'used' && (
             <p className={styles.note}>
               * На фото представлений приклад вживаної консолі і її вартість. Обіг консолей
               достатньо активний, не завжди є можливість фотографувати кожну консоль та викладати

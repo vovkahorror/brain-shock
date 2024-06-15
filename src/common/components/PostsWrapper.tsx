@@ -7,7 +7,7 @@ export const PostsWrapper = () => {
   return (
     <Routes>
       <Route element={<CurrentPosts />} index />
-      <Route element={<DetailedPost />} path={'detailed-post'} />
+      <Route element={<DetailedPost />} path={'detailed-post/:postIndex'} />
       <Route element={<Navigate to={'/'} />} path={'*'} />
     </Routes>
   )
