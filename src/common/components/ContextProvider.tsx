@@ -1,36 +1,18 @@
-import { FC, ReactNode, createContext, useEffect, useState } from 'react'
+import { FC, ReactNode, createContext, useState } from 'react'
 
-import { PostType } from '@/data/posts'
+import { PostsDataType, postsData } from '@/data/posts-data'
 
 export const NavigationContext = createContext<ContextProps | null>(null)
 
 export const ContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [navigationProps, setNavigationProps] = useState<NavigationProps | null>(() => {
-    const storedProps = localStorage.getItem('navigationProps')
-
-    return storedProps ? JSON.parse(storedProps) : null
-  })
-
-  useEffect(() => {
-    if (navigationProps) {
-      localStorage.setItem('navigationProps', JSON.stringify(navigationProps))
-    }
-  }, [navigationProps])
+  const [posts, setPosts] = useState<PostsDataType>(postsData)
 
   return (
-    <NavigationContext.Provider value={{ navigationProps, setNavigationProps }}>
-      {children}
-    </NavigationContext.Provider>
+    <NavigationContext.Provider value={{ posts, setPosts }}>{children}</NavigationContext.Provider>
   )
 }
 
-interface NavigationProps {
-  navPath: 'new' | 'used'
-  post: PostType
-  postIndex: number
-}
-
 export interface ContextProps {
-  navigationProps: NavigationProps | null
-  setNavigationProps: (props: NavigationProps | null) => void
+  posts: PostsDataType
+  setPosts: (posts: PostsDataType) => void
 }

@@ -93,7 +93,7 @@ import used_v2_06 from '../assets/images/consoles/used/v2/used_v2_06.webp'
 import used_v2_07 from '../assets/images/consoles/used/v2/used_v2_07.webp'
 import used_v2_08 from '../assets/images/consoles/used/v2/used_v2_08.webp'
 
-export const posts: PostsDataType = {
+export const postsData: PostsDataType = {
   new: [
     {
       condition: 'новий',

@@ -1,15 +1,13 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { useNavigation } from '@/common/hooks/useNavigation'
-import { PostType } from '@/data/posts'
+import { PostType } from '@/data/posts-data'
 
 import styles from './Post.module.scss'
 
 import PreloaderIcon from '../../../assets/images/preloader.svg?react'
 
 export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
-  const { setNavigationProps } = useNavigation()
   const { photos, price, title } = post
   const imageRef = useRef(null)
   const [backgroundSize, setBackgroundSize] = useState('100% auto')
@@ -17,12 +15,13 @@ export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
   const [isHovered, setIsHovered] = useState(false)
   const imgSrc = photos[0]
 
-  const handleImageLoad = useCallback(() => setImageLoaded(true), [])
+  const formattedTitle = title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
+  const navLink = `/${navPath}/detailed-post/${postIndex}/${formattedTitle}`
 
-  const handleClick = useCallback(
-    () => setNavigationProps({ navPath, post, postIndex }),
-    [navPath, post, postIndex, setNavigationProps]
-  )
+  const handleImageLoad = useCallback(() => setImageLoaded(true), [])
 
   const updateBackgroundSize = useCallback(() => {
     if (imageRef.current) {
@@ -63,7 +62,6 @@ export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
     >
       <div
         className={styles.image}
-        onClick={handleClick}
         ref={imageRef}
         style={{
           backgroundImage: `url(${imgSrc})`,
@@ -75,11 +73,7 @@ export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
       <h2 className={styles.title}>{title}</h2>
       <span className={styles.price}>{price} грн</span>
 
-      <NavLink
-        className={styles.link}
-        onClick={handleClick}
-        to={`/${navPath}/detailed-post/${postIndex}`}
-      />
+      <NavLink className={styles.link} to={navLink} />
       <img
         alt={''}
         onError={handleImageLoad}

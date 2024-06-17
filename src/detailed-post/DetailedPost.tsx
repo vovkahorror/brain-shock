@@ -5,7 +5,8 @@ import { Navigate, useParams } from 'react-router-dom'
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
 import { messageLink, telegramLink } from '@/common/consts/links'
-import { posts } from '@/data/posts'
+import { useNavigation } from '@/common/hooks/useNavigation'
+import { postsData } from '@/data/posts-data'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
 import LightGallery from 'lightgallery/react'
@@ -22,10 +23,11 @@ import styles from './DetailedPost.module.scss'
 import BasketIcon from '../assets/images/basket-icon.svg?react'
 
 export const DetailedPost = memo(() => {
+  const { posts } = useNavigation()
   const { navPath, postIndex } = useParams()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 
-  const currentPost = posts[navPath as keyof typeof posts][postIndex as unknown as number]
+  const currentPost = posts[navPath as keyof typeof postsData][postIndex as unknown as number]
 
   useEffect(() => {
     if (currentPost && currentPost.photos) {

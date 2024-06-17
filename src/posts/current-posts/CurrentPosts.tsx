@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack/GoBack'
-import { posts } from '@/data/posts'
+import { postsData } from '@/data/posts-data'
 import { Post } from '@/posts/current-posts/post/Post'
 import { v1 } from 'uuid'
 
@@ -11,12 +11,12 @@ import styles from './CurrentPosts.module.scss'
 
 export const CurrentPosts = () => {
   const location = useLocation()
-  const sanitizedPath = location.pathname.replace(/\//g, '') as keyof typeof posts
+  const sanitizedPath = location.pathname.replace(/\//g, '') as keyof typeof postsData
   const title = `${sanitizedPath === 'new' ? 'Нові' : 'Вживані'} консолі`
 
   const getPosts = useCallback(
     () =>
-      posts[sanitizedPath].map((post, index) => (
+      postsData[sanitizedPath].map((post, index) => (
         <Post key={v1()} navPath={sanitizedPath} post={post} postIndex={index} />
       )),
     [sanitizedPath]
