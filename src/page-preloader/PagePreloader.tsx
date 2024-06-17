@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import styles from './PagePreloader.module.scss'
 
-import FireImage from '../assets/images/fire.png'
+import FireImage from '../assets/images/fire.webp'
 
 export const PagePreloader = () => {
   const position = useRef(100)
