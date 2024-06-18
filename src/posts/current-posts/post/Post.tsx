@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
+import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { PostType } from '@/data/posts-data'
 
 import styles from './Post.module.scss'
@@ -15,11 +16,8 @@ export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
   const [isHovered, setIsHovered] = useState(false)
   const imgSrc = photos[0]
 
-  const formattedTitle = title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
-  const navLink = `/${navPath}/detailed-post/${postIndex}/${formattedTitle}`
+  const formattedTitle = formatStringToUrlFormat(title)
+  const navLink = `/${navPath}/${postIndex}/${formattedTitle}`
 
   const handleImageLoad = useCallback(() => setImageLoaded(true), [])
 

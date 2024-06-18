@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     svgr(),
     vitePrerender({
-      routes: ['/', '/new', '/used', '/new/detailed-post/*/*', '/used/detailed-post/*/*'],
+      routes: ['/', '/new', '/used', '/new/*/*', '/used/*/*'],
       staticDir: path.join(__dirname, 'dist'),
     }),
   ],

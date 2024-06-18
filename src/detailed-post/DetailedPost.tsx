@@ -5,6 +5,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
 import { messageLink, telegramLink } from '@/common/consts/links'
+import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { useNavigation } from '@/common/hooks/useNavigation'
 import { postsData } from '@/data/posts-data'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
@@ -24,7 +25,7 @@ import BasketIcon from '../assets/images/basket-icon.svg?react'
 
 export const DetailedPost = memo(() => {
   const { posts } = useNavigation()
-  const { navPath, postIndex } = useParams()
+  const { navPath, postIndex, postTitle } = useParams()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
 
   const currentPost = posts[navPath as keyof typeof postsData][postIndex as unknown as number]
@@ -55,7 +56,7 @@ export const DetailedPost = memo(() => {
     }
   }, [currentPost])
 
-  if (!currentPost) {
+  if (!currentPost || postTitle !== formatStringToUrlFormat(currentPost.title)) {
     return <Navigate to={'/'} />
   }
 
