@@ -17,11 +17,13 @@ export const Header = () => {
         <NavLink to={'/'}>
           <span className={styles.logo}>
             <img alt={'Logo'} src={logoImage} />
-            <svg className={styles.title}>
-              <text dy={'.35em'} textAnchor={'middle'} x={'50%'} y={'50%'}>
-                BrainShock
-              </text>
-            </svg>
+            <h1>
+              <svg className={styles.title}>
+                <text dy={'.35em'} textAnchor={'middle'} x={'50%'} y={'50%'}>
+                  BrainShock
+                </text>
+              </svg>
+            </h1>
           </span>
         </NavLink>
         <div className={styles.iconsBlock}>
