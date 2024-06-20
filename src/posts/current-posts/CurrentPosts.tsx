@@ -11,6 +11,7 @@ import styles from './CurrentPosts.module.scss'
 
 export const CurrentPosts = () => {
   const location = useLocation()
+  const fullUrl = window.location.href
   const sanitizedPath = location.pathname.replace(/\//g, '') as keyof typeof postsData
   const title = `${sanitizedPath === 'new' ? 'Нові' : 'Вживані'} консолі`
 
@@ -26,6 +27,8 @@ export const CurrentPosts = () => {
     <>
       <Helmet>
         <title>{`${title} | BrainShock – магазин прошитих Nintendo Switch`}</title>
+        <meta content={fullUrl} property={'og:url'} />
+        <meta content={title} property={'og:title'} />
       </Helmet>
 
       <section>

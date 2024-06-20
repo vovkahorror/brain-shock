@@ -27,6 +27,7 @@ export const DetailedPost = memo(() => {
   const { posts } = useNavigation()
   const { navPath, postIndex, postTitle } = useParams()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
+  const fullUrl = window.location.href
 
   const currentPost = posts[navPath as keyof typeof postsData][postIndex as unknown as number]
 
@@ -66,6 +67,8 @@ export const DetailedPost = memo(() => {
     <>
       <Helmet>
         <title>{`${currentPost.title} ${condition} | BrainShock – магазин прошитих Nintendo Switch`}</title>
+        <meta content={fullUrl} property={'og:url'} />
+        <meta content={title} property={'og:title'} />
       </Helmet>
 
       <section>
