@@ -38,6 +38,16 @@ export function App() {
 
   return (
     <div>
+      <Header />
+      <main className={styles.main}>
+        <>{routesElements}</>
+        <ModInfo />
+        <Chipping />
+        <Availability />
+        <Youtube />
+      </main>
+      <Footer />
+
       <PagePreloader />
       <div className={styles.pageBackground}>
         <ReactPlayer
@@ -53,16 +63,6 @@ export function App() {
         />
       </div>
       <PageBorder />
-
-      <Header />
-      <main className={styles.main}>
-        <>{routesElements}</>
-        <ModInfo />
-        <Chipping />
-        <Availability />
-        <Youtube />
-      </main>
-      <Footer />
       <ScrollToTop />
     </div>
   )
