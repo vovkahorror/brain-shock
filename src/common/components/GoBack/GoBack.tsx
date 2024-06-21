@@ -1,19 +1,23 @@
-import { useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { memo } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import styles from './GoBack.module.scss'
 
 import BackIcon from '../../../assets/images/back-icon.svg?react'
 
-export const GoBack = () => {
-  const navigate = useNavigate()
-
-  const goBack = useCallback(() => navigate(-1), [])
+export const GoBack = memo(({ path }: GoBackProps) => {
+  const navLink = path ? path : '/'
 
   return (
-    <button className={styles.button} onClick={goBack}>
-      <BackIcon className={styles.icon} />
-      <span className={styles.text}>Назад</span>
-    </button>
+    <NavLink to={navLink}>
+      <button className={styles.button}>
+        <BackIcon className={styles.icon} />
+        <span className={styles.text}>Назад</span>
+      </button>
+    </NavLink>
   )
+})
+
+interface GoBackProps {
+  path?: string
 }
