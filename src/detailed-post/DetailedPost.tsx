@@ -73,7 +73,7 @@ export const DetailedPost = memo(() => {
 
       <section>
         <div className={styles.container}>
-          <GoBack />
+          <GoBack path={`/${navPath}`} />
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.content}>
             <div className={styles.galleryWrapper}>
