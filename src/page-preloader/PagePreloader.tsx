@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 
 import styles from './PagePreloader.module.scss'
 
 import FireImage from '../assets/images/fire.webp'
 
-export const PagePreloader = () => {
+export const PagePreloader = memo(() => {
   const position = useRef(100)
   const preloaderRef = useRef<HTMLDivElement>(null)
   const preloaderImgRef = useRef<HTMLDivElement>(null)
@@ -51,4 +51,4 @@ export const PagePreloader = () => {
       />
     </div>
   )
-}
+})

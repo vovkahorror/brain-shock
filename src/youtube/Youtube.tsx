@@ -1,10 +1,12 @@
+import { memo } from 'react'
+
 import { youtubeLink } from '@/common/consts/links'
 
 import styles from './Youtube.module.scss'
 
 import YoutubeIcon from '../assets/images/youtube-icon.svg?react'
 
-export const Youtube = () => {
+export const Youtube = memo(() => {
   return (
     <section>
       <div className={styles.container}>
@@ -22,4 +24,4 @@ export const Youtube = () => {
       </div>
     </section>
   )
-}
+})

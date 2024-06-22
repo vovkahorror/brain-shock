@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { ClickableIcon } from '@/common/components/ClickableIcon/ClickableIcon'
@@ -10,7 +11,7 @@ import PromIcon from '../assets/images/prom.svg?react'
 import ShafaIcon from '../assets/images/shafa.svg?react'
 import TelegramIcon from '../assets/images/telegram.svg?react'
 
-export const Header = () => {
+export const Header = memo(() => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -34,4 +35,4 @@ export const Header = () => {
       </div>
     </header>
   )
-}
+})

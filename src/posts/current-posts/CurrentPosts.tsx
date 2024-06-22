@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ import { v1 } from 'uuid'
 
 import styles from './CurrentPosts.module.scss'
 
-export const CurrentPosts = () => {
+export const CurrentPosts = memo(() => {
   const location = useLocation()
   const sanitizedPath = location.pathname.replace(/\//g, '') as keyof typeof postsData
   const title = `${sanitizedPath === 'new' ? 'Нові' : 'Вживані'} консолі`
@@ -38,4 +38,4 @@ export const CurrentPosts = () => {
       </section>
     </>
   )
-}
+})

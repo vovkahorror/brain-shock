@@ -1,6 +1,8 @@
+import { memo } from 'react'
+
 import styles from './PageBorder.module.scss'
 
-export const PageBorder = () => {
+export const PageBorder = memo(() => {
   return (
     <div>
       <div className={styles.top}></div>
@@ -9,4 +11,4 @@ export const PageBorder = () => {
       <div className={styles.left}></div>
     </div>
   )
-}
+})

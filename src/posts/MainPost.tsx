@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import styles from './MainPost.module.scss'
@@ -7,7 +7,7 @@ import CoverImageNew from '../assets/images/cover-new.webp'
 import CoverImageUsed from '../assets/images/cover-used.webp'
 import PreloaderIcon from '../assets/images/preloader.svg?react'
 
-export const MainPost = () => {
+export const MainPost = memo(() => {
   return (
     <section>
       <div className={styles.container}>
@@ -27,9 +27,9 @@ export const MainPost = () => {
       </div>
     </section>
   )
-}
+})
 
-const MainPostItem = ({ image, navPath, title }: MainPostItemProps) => {
+const MainPostItem = memo(({ image, navPath, title }: MainPostItemProps) => {
   const imageRef = useRef(null)
   const [backgroundSize, setBackgroundSize] = useState('100% auto')
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -95,7 +95,7 @@ const MainPostItem = ({ image, navPath, title }: MainPostItemProps) => {
       />
     </article>
   )
-}
+})
 
 interface MainPostItemProps {
   image: string

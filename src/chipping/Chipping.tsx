@@ -1,6 +1,8 @@
+import { memo } from 'react'
+
 import styles from './Chipping.module.scss'
 
-export const Chipping = () => {
+export const Chipping = memo(() => {
   return (
     <section>
       <div className={styles.container}>
@@ -27,4 +29,4 @@ export const Chipping = () => {
       </div>
     </section>
   )
-}
+})

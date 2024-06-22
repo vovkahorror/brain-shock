@@ -1,10 +1,12 @@
+import { memo } from 'react'
+
 import { sheetLink, telegramLinkAdmin } from '@/common/consts/links'
 
 import styles from './Availability.module.scss'
 
 import SheetIcon from '../assets/images/sheet-icon.svg?react'
 
-export const Availability = () => {
+export const Availability = memo(() => {
   return (
     <section>
       <div className={styles.container}>
@@ -29,4 +31,4 @@ export const Availability = () => {
       </div>
     </section>
   )
-}
+})

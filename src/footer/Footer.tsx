@@ -1,8 +1,10 @@
+import { memo } from 'react'
+
 import { telegramLink } from '@/common/consts/links'
 
 import styles from './Footer.module.scss'
 
-export const Footer = () => {
+export const Footer = memo(() => {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -15,4 +17,4 @@ export const Footer = () => {
       </div>
     </footer>
   )
-}
+})

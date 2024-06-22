@@ -1,6 +1,8 @@
+import { memo } from 'react'
+
 import styles from './ModInfo.module.scss'
 
-export const ModInfo = () => {
+export const ModInfo = memo(() => {
   return (
     <section>
       <div className={styles.container}>
@@ -41,4 +43,4 @@ export const ModInfo = () => {
       </div>
     </section>
   )
-}
+})

@@ -1,8 +1,8 @@
-import { ElementType } from 'react'
+import { ElementType, memo } from 'react'
 
 import styles from './ClickableIcon.module.scss'
 
-export const ClickableIcon = ({ Icon, link }: ClickableIconProps) => {
+export const ClickableIcon = memo(({ Icon, link }: ClickableIconProps) => {
   return (
     <div>
       <a className={styles.link} href={link} rel={'noreferrer'} target={'_blank'}>
@@ -15,7 +15,7 @@ export const ClickableIcon = ({ Icon, link }: ClickableIconProps) => {
       </a>
     </div>
   )
-}
+})
 
 interface ClickableIconProps {
   Icon: ElementType
