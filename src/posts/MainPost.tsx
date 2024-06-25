@@ -13,7 +13,6 @@ export const MainPost = memo(() => {
     <>
       <Helmet>
         <title>BrainShock – магазин прошитих Nintendo Switch</title>
-
         <meta content={'BrainShock'} property={'og:title'} />
       </Helmet>
 
