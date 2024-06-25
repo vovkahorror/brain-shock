@@ -1,10 +1,10 @@
 import { memo, useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Navigate, useParams } from 'react-router-dom'
+import { Navigate, useLocation, useParams } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
-import { messageLink, telegramLink } from '@/common/consts/links'
+import { messageLink, siteUrl, telegramLink } from '@/common/consts/links'
 import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { useNavigation } from '@/common/hooks/useNavigation'
 import { postsData } from '@/data/posts-data'
@@ -27,8 +27,11 @@ export const DetailedPost = memo(() => {
   const { posts } = useNavigation()
   const { navPath, postIndex, postTitle } = useParams()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
+  const location = useLocation()
 
   const currentPost = posts[navPath as keyof typeof postsData][postIndex as unknown as number]
+
+  const canonicalUrl = `${siteUrl}${location.pathname}`
 
   useEffect(() => {
     if (currentPost && currentPost.photos) {
@@ -67,6 +70,7 @@ export const DetailedPost = memo(() => {
       <Helmet>
         <title>{`${currentPost.title} ${condition} | BrainShock – магазин прошитих Nintendo Switch`}</title>
         <meta content={title} property={'og:title'} />
+        <link href={canonicalUrl} rel={'canonical'} />
       </Helmet>
 
       <section>

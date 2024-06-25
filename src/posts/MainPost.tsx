@@ -2,6 +2,8 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { NavLink } from 'react-router-dom'
 
+import { siteUrl } from '@/common/consts/links'
+
 import styles from './MainPost.module.scss'
 
 import CoverImageNew from '../assets/images/cover-new.webp'
@@ -14,6 +16,7 @@ export const MainPost = memo(() => {
       <Helmet>
         <title>BrainShock – магазин прошитих Nintendo Switch</title>
         <meta content={'BrainShock'} property={'og:title'} />
+        <link href={siteUrl} rel={'canonical'} />
       </Helmet>
 
       <section>

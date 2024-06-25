@@ -1,3 +1,4 @@
+export const siteUrl = 'https://brainshock.shop'
 export const telegramLink = 'https://t.me/Brain_Shock'
 export const messageLink = 'https://t.me/Yurkapro2000?text=Вітаю! Я з приводу придбання консолі'
 export const telegramLinkAdmin = 'https://t.me/Yurkapro2000'
