@@ -1,8 +1,8 @@
 const fs = require('fs')
 const path = require('path')
-const { siteUrl } = require('./src/common/consts/links')
-const { postsData } = require('./src/data/posts-data')
-const { formatStringToUrlFormat } = require('./src/common/helpers/formatStringToUrlFormat')
+const { siteUrl } = require('@/common/consts/links')
+const { postsData } = require('@/data/posts-data')
+const { formatStringToUrlFormat } = require('@/common/helpers/formatStringToUrlFormat')
 
 const generateSitemap = () => {
   const urls = []

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && node generate-sitemap.js",
+    "build": "tsc && vite build",
     "format": "prettier --write src",
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
     "preview": "vite preview"
@@ -16,6 +16,7 @@
     "react-helmet": "^6.1.0",
     "react-player": "^2.16.0",
     "react-router-dom": "^6.23.0",
+    "sitemap": "^8.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
