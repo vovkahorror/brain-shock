@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "types": ["node", "vite-plugin-svgr/client"],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

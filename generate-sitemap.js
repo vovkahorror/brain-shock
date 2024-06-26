@@ -9,13 +9,28 @@ const generateSitemap = () => {
   const date = new Date().toISOString()
 
   urls.push(
-    `<url><loc>${siteUrl}/</loc><lastmod>${date}</lastmod><changefreq>Main</changefreq><priority>1.0</priority></url>`
+    `<url>
+      <loc>${siteUrl}/</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+    </url>`
   )
   urls.push(
-    `<url><loc>${siteUrl}/new</loc><lastmod>${date}</lastmod><changefreq>New consoles</changefreq><priority>0.8</priority></url>`
+    `<url>
+      <loc>${siteUrl}/new</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>`
   )
   urls.push(
-    `<url><loc>${siteUrl}/used</loc><lastmod>${date}</lastmod><changefreq>Used consoles</changefreq><priority>0.8</priority></url>`
+    `<url>
+      <loc>${siteUrl}/used</loc>
+      <lastmod>${date}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>`
   )
 
   for (const [key, posts] of Object.entries(postsData)) {
@@ -24,7 +39,12 @@ const generateSitemap = () => {
       const url = `${siteUrl}/${key}/${index}/${formattedTitle}`
 
       urls.push(
-        `<url><loc>${url}</loc><lastmod>${date}</lastmod><changefreq>${post.title}</changefreq><priority>0.6</priority></url>`
+        `<url>
+          <loc>${url}</loc>
+          <lastmod>${date}</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.6</priority>
+        </url>`
       )
     })
   }
