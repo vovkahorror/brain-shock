@@ -24,6 +24,11 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "src/common/consts/links.ts",
+    "src/data/posts-data.ts",
+    "src/common/helpers/formatStringToUrlFormat.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
