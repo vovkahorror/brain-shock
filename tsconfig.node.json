@@ -7,10 +7,5 @@
     "allowSyntheticDefaultImports": true,
     "strict": true
   },
-  "include": [
-    "vite.config.ts",
-    "src/common/consts/links.ts",
-    "src/data/posts-data.ts",
-    "src/common/helpers/formatStringToUrlFormat.ts"
-  ]
+  "include": ["vite.config.ts"]
 }
