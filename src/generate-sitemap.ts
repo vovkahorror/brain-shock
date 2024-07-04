@@ -5,9 +5,6 @@ import { siteUrl } from './common/consts/links'
 import { formatStringToUrlFormat } from './common/helpers/formatStringToUrlFormat'
 import { postsData } from './data/posts-data'
 
-const isBrowser = typeof window !== 'undefined'
-const __dirname = isBrowser ? '' : path.dirname(new URL(import.meta.url).pathname)
-
 export const generateSitemap = () => {
   const urls = []
   const date = new Date().toISOString()
@@ -58,7 +55,5 @@ export const generateSitemap = () => {
     ${urls.join('')}
   </urlset>`
 
-  if (!isBrowser) {
-    fs.writeFileSync(path.resolve(__dirname, 'sitemap.xml'), sitemapContent)
-  }
+  fs.writeFileSync(path.resolve(__dirname, 'sitemap.xml'), sitemapContent)
 }

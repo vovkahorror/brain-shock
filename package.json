@@ -16,9 +16,7 @@
     "react-helmet": "^6.1.0",
     "react-player": "^2.16.0",
     "react-router-dom": "^6.23.0",
-    "uuid": "^9.0.1",
-    "vite-plugin-node-polyfills": "^0.22.0",
-    "vite-tsconfig-paths": "^4.3.2"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@it-incubator/eslint-config": "^1.0.2",
