@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 
 import { ContextProvider } from '@/common/components/ContextProvider'
+import { generateSitemap } from '@/generate-sitemap'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 
 import './index.scss'
@@ -25,3 +26,5 @@ if (rootElement.hasChildNodes()) {
     </BrowserRouter>
   )
 }
+
+generateSitemap()

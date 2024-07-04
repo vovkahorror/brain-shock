@@ -1,11 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 
-import { siteUrl } from './src/common/consts/links'
-import { formatStringToUrlFormat } from './src/common/helpers/formatStringToUrlFormat'
-import { postsData } from './src/data/posts-data'
+import { siteUrl } from './common/consts/links'
+import { formatStringToUrlFormat } from './common/helpers/formatStringToUrlFormat'
+import { postsData } from './data/posts-data'
 
-const generateSitemap = () => {
+export const generateSitemap = () => {
   const urls = []
   const date = new Date().toISOString()
 
@@ -57,5 +57,3 @@ const generateSitemap = () => {
 
   fs.writeFileSync(path.resolve(__dirname, 'public', 'sitemap.xml'), sitemapContent)
 }
-
-generateSitemap()
