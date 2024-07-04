@@ -55,5 +55,5 @@ export const generateSitemap = () => {
     ${urls.join('')}
   </urlset>`
 
-  fs.writeFileSync(path.resolve(__dirname, 'public', 'sitemap.xml'), sitemapContent)
+  fs.writeFileSync(path.resolve(__dirname, 'sitemap.xml'), sitemapContent)
 }
