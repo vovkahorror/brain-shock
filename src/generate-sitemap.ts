@@ -1,13 +1,12 @@
 import fs from 'fs'
 import path from 'path'
-import { fileURLToPath } from 'url'
 
 import { siteUrl } from './common/consts/links'
 import { formatStringToUrlFormat } from './common/helpers/formatStringToUrlFormat'
 import { postsData } from './data/posts-data'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const isBrowser = typeof window !== 'undefined'
+const __dirname = isBrowser ? '' : path.dirname(new URL(import.meta.url).pathname)
 
 export const generateSitemap = () => {
   const urls = []
@@ -59,5 +58,7 @@ export const generateSitemap = () => {
     ${urls.join('')}
   </urlset>`
 
-  fs.writeFileSync(path.resolve(__dirname, 'sitemap.xml'), sitemapContent)
+  if (!isBrowser) {
+    fs.writeFileSync(path.resolve(__dirname, 'sitemap.xml'), sitemapContent)
+  }
 }
