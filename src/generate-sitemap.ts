@@ -1,9 +1,13 @@
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
 import { siteUrl } from './common/consts/links'
 import { formatStringToUrlFormat } from './common/helpers/formatStringToUrlFormat'
 import { postsData } from './data/posts-data'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export const generateSitemap = () => {
   const urls = []
