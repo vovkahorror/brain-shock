@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     svgr(),
     vitePrerender({
-      routes: ['/', '/new', '/used', '/new/*/*', '/used/*/*'],
+      routes: ['/', '/new', '/used', '/new/0/nintendo-switch-oled', '/new/1/nintendo-switch-v2'],
       staticDir: path.join(__dirname, 'dist'),
     }),
   ],
