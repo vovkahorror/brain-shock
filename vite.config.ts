@@ -10,7 +10,15 @@ export default defineConfig({
     react(),
     svgr(),
     vitePrerender({
-      routes: ['/', '/new', '/used', '/new/0/nintendo-switch-oled', '/new/1/nintendo-switch-v2'],
+      routes: [
+        '/',
+        '/new',
+        '/used',
+        '/new/0/nintendo-switch-oled',
+        '/new/1/nintendo-switch-v2',
+        '/new/2/nintendo-switch-lite',
+        '/used/0/nintendo-switch-oled-white',
+      ],
       staticDir: path.join(__dirname, 'dist'),
     }),
   ],
