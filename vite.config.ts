@@ -20,6 +20,8 @@ export default defineConfig({
         '/used/0/nintendo-switch-oled-white',
         '/used/1/nintendo-switch-oled-blue-red',
         '/used/2/nintendo-switch-v2',
+        '/used/3/nintendo-switch-lite-grey',
+        '/used/4/nintendo-switch-lite-blue',
       ],
       staticDir: path.join(__dirname, 'dist'),
     }),
