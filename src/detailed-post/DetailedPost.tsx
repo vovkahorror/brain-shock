@@ -23,7 +23,7 @@ import styles from './DetailedPost.module.scss'
 
 import BasketIcon from '../assets/images/basket-icon.svg?react'
 
-export const DetailedPost = memo(() => {
+const DetailedPost = memo(() => {
   const { posts } = useNavigation()
   const { navPath, postIndex, postTitle } = useParams()
   const [imagesSizes, setImagesSizes] = useState([] as string[])
@@ -137,3 +137,5 @@ export const DetailedPost = memo(() => {
     </>
   )
 })
+
+export default DetailedPost

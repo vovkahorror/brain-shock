@@ -10,7 +10,7 @@ import { v1 } from 'uuid'
 
 import styles from './CurrentPosts.module.scss'
 
-export const CurrentPosts = memo(() => {
+const CurrentPosts = memo(() => {
   const location = useLocation()
   const sanitizedPath = location.pathname.replace(/\//g, '') as keyof typeof postsData
   const title = `${sanitizedPath === 'new' ? 'Нові' : 'Вживані'} консолі`
@@ -43,3 +43,5 @@ export const CurrentPosts = memo(() => {
     </>
   )
 })
+
+export default CurrentPosts
