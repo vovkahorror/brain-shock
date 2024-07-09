@@ -24,7 +24,7 @@ export default defineConfig({
         '/used/4/nintendo-switch-lite-blue',
         '/used/5/nintendo-switch-lite-yellow',
         '/used/6/nintendo-switch-lite-turquoise',
-        '/7/nintendo-switch-lite-coral',
+        '/used/7/nintendo-switch-lite-coral',
       ],
       staticDir: path.join(__dirname, 'dist'),
     }),
