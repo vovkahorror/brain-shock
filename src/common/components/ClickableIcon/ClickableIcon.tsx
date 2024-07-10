@@ -4,7 +4,7 @@ import styles from './ClickableIcon.module.scss'
 
 export const ClickableIcon = memo(({ Icon, link }: ClickableIconProps) => {
   return (
-    <div>
+    <button className={styles.button}>
       <a className={styles.link} href={link} rel={'noreferrer'} target={'_blank'}>
         <span className={styles.iconWrapperTop}>
           <Icon className={styles.icon} />
@@ -13,7 +13,7 @@ export const ClickableIcon = memo(({ Icon, link }: ClickableIconProps) => {
           <Icon className={styles.icon} />
         </span>
       </a>
-    </div>
+    </button>
   )
 })
 
