@@ -25,3 +25,14 @@ if (rootElement.hasChildNodes()) {
     </BrowserRouter>
   )
 }
+
+const originalWarn = console.warn
+
+console.warn = function (message, ...args) {
+  if (
+    message.includes('lightGallery: 0000-0000-000-0000 license key is not valid for production use')
+  ) {
+    return
+  }
+  originalWarn.apply(console, [message, ...args])
+}
