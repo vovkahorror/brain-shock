@@ -100,7 +100,7 @@ const DetailedPost = memo(() => {
                 </span>
               )}
               <a href={messageLink} rel={'noreferrer'} target={'_blank'}>
-                <button className={styles.button}>
+                <button aria-label={'Замовити'} className={styles.button}>
                   <BasketIcon className={styles.icon} />
                   Замовити
                 </button>

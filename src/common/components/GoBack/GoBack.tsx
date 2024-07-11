@@ -10,7 +10,7 @@ export const GoBack = memo(({ path }: GoBackProps) => {
 
   return (
     <NavLink to={navLink}>
-      <button className={styles.button}>
+      <button aria-label={'Назад'} className={styles.button}>
         <BackIcon className={styles.icon} />
         <span className={styles.text}>Назад</span>
       </button>

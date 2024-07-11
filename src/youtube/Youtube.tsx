@@ -16,7 +16,7 @@ export const Youtube = memo(() => {
           Приєднуйтесь!
         </p>
         <a href={youtubeLink} rel={'noreferrer'} target={'_blank'}>
-          <button className={styles.button}>
+          <button aria-label={'YouTube'} className={styles.button}>
             <YoutubeIcon className={styles.icon} />
             YouTube
           </button>

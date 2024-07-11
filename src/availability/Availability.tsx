@@ -23,7 +23,7 @@ export const Availability = memo(() => {
           </a>
         </p>
         <a href={sheetLink} rel={'noreferrer'} target={'_blank'}>
-          <button className={styles.button}>
+          <button aria-label={'Google-таблиця'} className={styles.button}>
             <SheetIcon className={styles.icon} />
             Переглянути
           </button>
