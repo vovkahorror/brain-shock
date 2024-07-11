@@ -85,7 +85,6 @@ const DetailedPost = memo(() => {
       },
       url: canonicalUrl,
     },
-    sku: 'Your-SKU',
   }
 
   return (
