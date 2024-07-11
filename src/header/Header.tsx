@@ -28,9 +28,9 @@ export const Header = memo(() => {
           </span>
         </NavLink>
         <div className={styles.iconsBlock}>
-          <ClickableIcon Icon={TelegramIcon} link={telegramLink} />
-          <ClickableIcon Icon={PromIcon} link={promLink} />
-          <ClickableIcon Icon={ShafaIcon} link={shafaLink} />
+          <ClickableIcon Icon={TelegramIcon} link={telegramLink} name={'Telegram link'} />
+          <ClickableIcon Icon={PromIcon} link={promLink} name={'Prom link'} />
+          <ClickableIcon Icon={ShafaIcon} link={shafaLink} name={'Shafa link'} />
         </div>
       </div>
     </header>

@@ -2,9 +2,9 @@ import { ElementType, memo } from 'react'
 
 import styles from './ClickableIcon.module.scss'
 
-export const ClickableIcon = memo(({ Icon, link }: ClickableIconProps) => {
+export const ClickableIcon = memo(({ Icon, link, name }: ClickableIconProps) => {
   return (
-    <button className={styles.button}>
+    <button aria-label={name} className={styles.button}>
       <a className={styles.link} href={link} rel={'noreferrer'} target={'_blank'}>
         <span className={styles.iconWrapperTop}>
           <Icon className={styles.icon} />
@@ -20,4 +20,5 @@ export const ClickableIcon = memo(({ Icon, link }: ClickableIconProps) => {
 interface ClickableIconProps {
   Icon: ElementType
   link: string
+  name: string
 }
