@@ -65,12 +65,36 @@ const DetailedPost = memo(() => {
 
   const { color, condition, description, photos, price, title } = currentPost
 
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    brand: {
+      '@type': 'Brand',
+      name: 'Nintendo Switch',
+    },
+    description: description,
+    image: photos,
+    name: title,
+    offers: {
+      '@type': 'Offer',
+      price: price,
+      priceCurrency: 'UAH',
+      seller: {
+        '@type': 'Organization',
+        name: 'BrainShock',
+      },
+      url: canonicalUrl,
+    },
+    sku: 'Your-SKU',
+  }
+
   return (
     <>
       <Helmet>
         <title>{`${currentPost.title} ${condition} | BrainShock – магазин прошитих Nintendo Switch`}</title>
         <meta content={title} property={'og:title'} />
         <link href={canonicalUrl} rel={'canonical'} />
+        <script type={'application/ld+json'}>{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <section>
