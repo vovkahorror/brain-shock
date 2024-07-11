@@ -1,67 +1,72 @@
 @import '../../styles/variables';
 
-.link {
-  position: relative;
-  transform: rotate(5deg);
+.button {
+  background: none;
+  border: none;
 
-  .iconWrapperTop {
-    overflow: hidden;
-    display: flex;
-    height: 20px;
-    transition: 0.2s transform ease-out;
+  .link {
+    position: relative;
+    transform: rotate(5deg);
 
-    @media (width <= 768px) {
-      height: 15px;
-    }
-  }
+    .iconWrapperTop {
+      overflow: hidden;
+      display: flex;
+      height: 20px;
+      transition: 0.2s transform ease-out;
 
-  .iconWrapperBottom {
-    @extend .iconWrapperTop;
-
-    bottom: -20px;
-    align-items: flex-end;
-
-    @media (width <= 768px) {
-      bottom: -15px;
-    }
-  }
-
-  .icon {
-    width: 40px;
-    height: 40px;
-    transition: 0.2s;
-
-    @media (width <= 768px) {
-      width: 30px;
-      height: 30px;
-    }
-  }
-
-  @media (hover: hover) {
-    &:hover > :nth-child(1) {
-      transform: translateX(-4px) rotate(-5deg);
+      @media (width <= 768px) {
+        height: 15px;
+      }
     }
 
-    &:hover > :nth-child(2) {
-      transform: translateX(4px) rotate(-5deg);
+    .iconWrapperBottom {
+      @extend .iconWrapperTop;
+
+      bottom: -20px;
+      align-items: flex-end;
+
+      @media (width <= 768px) {
+        bottom: -15px;
+      }
     }
 
-    &:hover .icon * {
-      fill: $primary-color;
-    }
-  }
+    .icon {
+      width: 40px;
+      height: 40px;
+      transition: 0.2s;
 
-  @media (hover: none) {
-    &:active > :nth-child(1) {
-      transform: translateX(-4px) rotate(-5deg);
-    }
-
-    &:active > :nth-child(2) {
-      transform: translateX(4px) rotate(-5deg);
+      @media (width <= 768px) {
+        width: 30px;
+        height: 30px;
+      }
     }
 
-    &:active .icon {
-      fill: $primary-color;
+    @media (hover: hover) {
+      &:hover > :nth-child(1) {
+        transform: translateX(-4px) rotate(-5deg);
+      }
+
+      &:hover > :nth-child(2) {
+        transform: translateX(4px) rotate(-5deg);
+      }
+
+      &:hover .icon * {
+        fill: $primary-color;
+      }
+    }
+
+    @media (hover: none) {
+      &:active > :nth-child(1) {
+        transform: translateX(-4px) rotate(-5deg);
+      }
+
+      &:active > :nth-child(2) {
+        transform: translateX(4px) rotate(-5deg);
+      }
+
+      &:active .icon {
+        fill: $primary-color;
+      }
     }
   }
 }
