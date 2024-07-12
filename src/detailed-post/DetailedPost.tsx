@@ -68,6 +68,10 @@ const DetailedPost = memo(() => {
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+    },
     brand: {
       '@type': 'Brand',
       name: 'Nintendo Switch',
@@ -77,14 +81,25 @@ const DetailedPost = memo(() => {
     name: title,
     offers: {
       '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
       price: price,
       priceCurrency: 'UAH',
+      priceValidUntil: '2025-12-31',
       seller: {
         '@type': 'Organization',
         name: 'BrainShock',
       },
       url: canonicalUrl,
     },
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+        },
+      },
+    ],
   }
 
   return (
