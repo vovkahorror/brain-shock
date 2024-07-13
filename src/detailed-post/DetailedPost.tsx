@@ -82,12 +82,29 @@ const DetailedPost = memo(() => {
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        name: 'Політика повернення',
+        returnPolicyCountry: 'UA',
+      },
       price: price,
       priceCurrency: 'UAH',
       priceValidUntil: '2025-12-31',
       seller: {
         '@type': 'Organization',
         name: 'BrainShock',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          businessDays: '1-2',
+        },
+        shippingRate: {
+          '@type': 'PropertyValue',
+          currency: 'UAH',
+          value: true,
+        },
       },
       url: canonicalUrl,
     },
