@@ -103,7 +103,7 @@ const DetailedPost = memo(() => {
         shippingRate: {
           '@type': 'MonetaryAmount',
           currency: 'UAH',
-          value: true,
+          value: '145',
         },
       },
       url: canonicalUrl,
