@@ -101,9 +101,9 @@ const DetailedPost = memo(() => {
           businessDays: '1-2',
         },
         shippingRate: {
-          '@type': 'MonetaryAmount',
-          currency: 'UAH',
-          value: '145',
+          '@type': 'PropertyValue',
+          currenciesAccepted: 'UAH',
+          value: true,
         },
       },
       url: canonicalUrl,
