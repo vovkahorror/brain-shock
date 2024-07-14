@@ -88,24 +88,24 @@ const DetailedPost = memo(() => {
         returnPolicyCountry: 'UA',
       },
       price: price,
-      priceCurrency: 'UAH',
-      priceValidUntil: '2025-12-31',
-      seller: {
-        '@type': 'Organization',
-        name: 'BrainShock',
-      },
-      shippingDetails: {
-        '@type': 'OfferShippingDetails',
-        deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          businessDays: '1-2',
-        },
-        shippingRate: {
-          '@type': 'PropertyValue',
-          currency: 'UAH',
-          value: true,
-        },
-      },
+      // priceCurrency: 'UAH',
+      // priceValidUntil: '2025-12-31',
+      // seller: {
+      //   '@type': 'Organization',
+      //   name: 'BrainShock',
+      // },
+      // shippingDetails: {
+      //   '@type': 'OfferShippingDetails',
+      //   deliveryTime: {
+      //     '@type': 'ShippingDeliveryTime',
+      //     businessDays: '1-2',
+      //   },
+      //   shippingRate: {
+      //     '@type': 'PropertyValue',
+      //     currency: 'UAH',
+      //     value: true,
+      //   },
+      // },
       url: canonicalUrl,
     },
     review: [
