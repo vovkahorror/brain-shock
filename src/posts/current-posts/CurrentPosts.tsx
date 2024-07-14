@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { siteUrl } from '@/common/consts/links'
+import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { postsData } from '@/data/posts-data'
 import { Post } from '@/posts/current-posts/post/Post'
 import { v1 } from 'uuid'
@@ -25,12 +26,36 @@ const CurrentPosts = memo(() => {
     [sanitizedPath]
   )
 
+  const getItemListElements = useCallback(
+    () =>
+      postsData[sanitizedPath].map((post, index) => ({
+        '@type': 'ListItem',
+        item: `${siteUrl}/${sanitizedPath}/${index}/${formatStringToUrlFormat(post.title)}`,
+        name: post.title,
+        position: index + 1,
+      })),
+    [sanitizedPath]
+  )
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: getItemListElements(),
+    },
+    description: `${title} Nintendo Switch, прошиті, чиповані та модифіковані для комфортної гри`,
+    name: title,
+    url: canonicalUrl,
+  }
+
   return (
     <>
       <Helmet>
         <title>{`${title} | BrainShock – магазин прошитих Nintendo Switch`}</title>
         <meta content={title} property={'og:title'} />
         <link href={canonicalUrl} rel={'canonical'} />
+        <script type={'application/ld+json'}>{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <section>
