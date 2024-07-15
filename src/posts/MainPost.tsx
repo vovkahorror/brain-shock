@@ -8,15 +8,47 @@ import styles from './MainPost.module.scss'
 
 import CoverImageNew from '../assets/images/cover-new.webp'
 import CoverImageUsed from '../assets/images/cover-used.webp'
+import logo from '../assets/images/logo.webp'
 import PreloaderIcon from '../assets/images/preloader.svg?react'
 
 export const MainPost = memo(() => {
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'Store',
+    description: 'BrainShock – магазин прошитих Nintendo Switch',
+    image: [CoverImageNew, CoverImageUsed],
+    logo: logo,
+    name: 'BrainShock',
+    offers: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          image: CoverImageNew,
+          name: 'Нові Nintendo Switch',
+        },
+        url: `${siteUrl}/new`,
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          image: CoverImageUsed,
+          name: 'Вживані Nintendo Switch',
+        },
+        url: `${siteUrl}/used`,
+      },
+    ],
+    url: siteUrl,
+  }
+
   return (
     <>
       <Helmet>
         <title>BrainShock – магазин прошитих Nintendo Switch</title>
         <meta content={'BrainShock'} property={'og:title'} />
         <link href={siteUrl} rel={'canonical'} />
+        <script type={'application/ld+json'}>{JSON.stringify(schemaData)}</script>
       </Helmet>
 
       <section>
