@@ -122,9 +122,9 @@ const DetailedPost = memo(() => {
   return (
     <>
       <Helmet>
-        <title>{`${currentPost.title} прошита ${
+        <title>{`${currentPost.title} ${
           condition === 'новий' ? 'нова' : 'вживана'
-        } | BrainShock – магазин прошитих Nintendo Switch`}</title>
+        }, прошита, чипована та модифікована для комфортної гри | BrainShock – магазин прошитих Nintendo Switch`}</title>
         <meta content={title} property={'og:title'} />
         <link href={canonicalUrl} rel={'canonical'} />
         <script type={'application/ld+json'}>{JSON.stringify(schemaData)}</script>
