@@ -32,6 +32,7 @@ const DetailedPost = memo(() => {
   const currentPost = posts[navPath as keyof typeof postsData][postIndex as unknown as number]
 
   const canonicalUrl = `${siteUrl}${location.pathname}`
+  const validPriceDate = new Date(2025, 11, 31)
 
   useEffect(() => {
     if (currentPost && currentPost.photos) {
@@ -89,7 +90,7 @@ const DetailedPost = memo(() => {
       },
       price: price,
       priceCurrency: 'UAH',
-      priceValidUntil: '2025-12-31',
+      priceValidUntil: validPriceDate,
       seller: {
         '@type': 'Organization',
         name: 'BrainShock',
