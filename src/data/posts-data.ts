@@ -134,6 +134,8 @@ export const postsData: PostsDataType = {
     {
       condition: 'новий',
       description: 'Портативна консоль Nintendo Switch Lite.\n' + descriptionNew,
+      maxPrice: 10499,
+      minPrice: 10199,
       photos: [
         new_lite_01,
         new_lite_02,
@@ -143,7 +145,8 @@ export const postsData: PostsDataType = {
         new_lite_06,
         new_lite_07,
       ],
-      price: '10199-10499',
+      price: 10499,
+      priceRange: '10199-10499',
       title: 'Nintendo Switch Lite',
     },
   ],
@@ -316,7 +319,10 @@ export type PostType = {
   color?: string
   condition: 'вживаний' | 'новий'
   description: string
+  maxPrice?: number
+  minPrice?: number
   photos: string[]
-  price: number | string
+  price: number
+  priceRange?: string
   title: string
 }
