@@ -85,6 +85,7 @@ const DetailedPost = memo(() => {
       availability: 'https://schema.org/InStock',
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'UA',
         name: 'Політика повернення',
         returnPolicyCountry: 'UA',
       },
