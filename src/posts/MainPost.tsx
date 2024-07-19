@@ -27,6 +27,12 @@ export const MainPost = memo(() => {
           image: CoverImageNew,
           name: 'Нові Nintendo Switch',
         },
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          itemCondition: 'https://schema.org/UsedCondition',
+          priceCurrency: 'UAH',
+        },
         url: `${siteUrl}/new`,
       },
       {
@@ -35,6 +41,12 @@ export const MainPost = memo(() => {
           '@type': 'Product',
           image: CoverImageUsed,
           name: 'Вживані Nintendo Switch',
+        },
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          itemCondition: 'https://schema.org/UsedCondition',
+          priceCurrency: 'UAH',
         },
         url: `${siteUrl}/used`,
       },
