@@ -101,6 +101,10 @@ const DetailedPost = memo(() => {
           '@type': 'ShippingDeliveryTime',
           businessDays: '1-2',
         },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'UA',
+        },
         shippingRate: {
           '@type': 'MonetaryAmount',
           currency: 'UAH',
