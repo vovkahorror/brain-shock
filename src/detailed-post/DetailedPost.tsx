@@ -87,6 +87,7 @@ const DetailedPost = memo(() => {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: 'UA',
         name: 'Політика повернення',
+        returnPolicyCategory: 'https://schema.org/ReturnShippingFees',
         returnPolicyCountry: 'UA',
       },
       price: priceRange || price,
