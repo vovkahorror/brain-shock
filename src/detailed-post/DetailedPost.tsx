@@ -110,6 +110,11 @@ const DetailedPost = memo(() => {
               'https://schema.org/Sunday',
             ],
           },
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            maxValue: 1,
+            minValue: 1,
+          },
           transitTime: {
             '@type': 'QuantitativeValue',
             maxValue: 2,
