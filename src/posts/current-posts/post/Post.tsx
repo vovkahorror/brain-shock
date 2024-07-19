@@ -9,7 +9,7 @@ import styles from './Post.module.scss'
 import PreloaderIcon from '../../../assets/images/preloader.svg?react'
 
 export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
-  const { photos, price, title } = post
+  const { photos, price, priceRange, title } = post
   const imageRef = useRef(null)
   const [backgroundSize, setBackgroundSize] = useState('100% auto')
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -69,7 +69,7 @@ export const Post = memo(({ navPath, post, postIndex }: PostProps) => {
         {!imageLoaded && <PreloaderIcon />}
       </div>
       <h2 className={styles.title}>{title}</h2>
-      <span className={styles.price}>{price} грн</span>
+      <span className={styles.price}>{priceRange || price} грн</span>
 
       <NavLink className={styles.link} to={navLink} />
       <img

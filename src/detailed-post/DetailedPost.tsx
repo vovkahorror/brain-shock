@@ -64,7 +64,7 @@ const DetailedPost = memo(() => {
     return <Navigate to={'/'} />
   }
 
-  const { color, condition, description, photos, price, title } = currentPost
+  const { color, condition, description, photos, price, priceRange, title } = currentPost
 
   const schemaData = {
     '@context': 'https://schema.org',
@@ -88,7 +88,7 @@ const DetailedPost = memo(() => {
         name: 'Політика повернення',
         returnPolicyCountry: 'UA',
       },
-      price: price,
+      price: priceRange || price,
       priceCurrency: 'UAH',
       priceValidUntil: validPriceDate,
       seller: {
@@ -146,7 +146,7 @@ const DetailedPost = memo(() => {
               </LightGallery>
             </div>
             <div className={styles.text}>
-              <span className={styles.price}>{price} грн</span>
+              <span className={styles.price}>{priceRange || price} грн</span>
               <span>
                 <span className={styles.valueTitle}>стан:</span>{' '}
                 <span className={styles.value}>{condition}</span>

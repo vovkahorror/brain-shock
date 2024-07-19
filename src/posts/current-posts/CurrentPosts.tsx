@@ -18,6 +18,31 @@ const CurrentPosts = memo(() => {
 
   const canonicalUrl = `${siteUrl}${location.pathname}`
 
+  let minPrice: number = 0
+  let maxPrice: number = 0
+
+  const itemsList = postsData[sanitizedPath].map((post, index) => {
+    const currentMinPrice = post.minPrice || post.price
+    const currentMaxPrice = post.maxPrice || post.price
+
+    if (minPrice === 0) {
+      minPrice = post.price
+    }
+    if (currentMinPrice < minPrice) {
+      minPrice = post.price
+    }
+    if (currentMaxPrice > maxPrice) {
+      maxPrice = post.price
+    }
+
+    return {
+      '@type': 'ListItem',
+      item: `${siteUrl}/${sanitizedPath}/${index}/${formatStringToUrlFormat(post.title)}`,
+      name: post.title,
+      position: index + 1,
+    }
+  })
+
   const getPosts = useCallback(
     () =>
       postsData[sanitizedPath].map((post, index) => (
@@ -26,26 +51,23 @@ const CurrentPosts = memo(() => {
     [sanitizedPath]
   )
 
-  const getItemListElements = useCallback(
-    () =>
-      postsData[sanitizedPath].map((post, index) => ({
-        '@type': 'ListItem',
-        item: `${siteUrl}/${sanitizedPath}/${index}/${formatStringToUrlFormat(post.title)}`,
-        name: post.title,
-        position: index + 1,
-      })),
-    [sanitizedPath]
-  )
-
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     breadcrumb: {
       '@type': 'BreadcrumbList',
-      itemListElement: getItemListElements(),
+      itemListElement: itemsList,
     },
     description: `${title} Nintendo Switch, прошиті, чиповані та модифіковані для комфортної гри`,
     name: title,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/UsedCondition',
+      price: `${minPrice}-${maxPrice}`,
+      priceCurrency: 'UAH',
+      url: canonicalUrl,
+    },
     url: canonicalUrl,
   }
 
