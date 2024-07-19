@@ -102,7 +102,7 @@ const DetailedPost = memo(() => {
           businessDays: '1-2',
         },
         shippingRate: {
-          '@type': 'PropertyValue',
+          '@type': 'MonetaryAmount',
           currency: 'UAH',
           value: true,
         },
