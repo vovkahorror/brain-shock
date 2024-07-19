@@ -98,8 +98,23 @@ const DetailedPost = memo(() => {
       shippingDetails: {
         '@type': 'OfferShippingDetails',
         deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          businessDays: '1-2',
+          businessDays: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+              'https://schema.org/Monday',
+              'https://schema.org/Tuesday',
+              'https://schema.org/Wednesday',
+              'https://schema.org/Thursday',
+              'https://schema.org/Friday',
+              'https://schema.org/Saturday',
+              'https://schema.org/Sunday',
+            ],
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            maxValue: 2,
+            minValue: 1,
+          },
         },
         shippingDestination: {
           '@type': 'DefinedRegion',
