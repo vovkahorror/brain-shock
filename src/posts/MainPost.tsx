@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 import { validPriceDate } from '@/common/consts/calculations'
 import { siteUrl } from '@/common/consts/links'
+import { reviews } from '@/data/reviews'
 
 import styles from './MainPost.module.scss'
 
@@ -25,6 +26,11 @@ export const MainPost = memo(() => {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Product',
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '5',
+            reviewCount: reviews.length,
+          },
           image: CoverImageNew,
           name: 'Нові Nintendo Switch',
           offers: {
@@ -42,6 +48,11 @@ export const MainPost = memo(() => {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Product',
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '5',
+            reviewCount: reviews.length,
+          },
           image: CoverImageUsed,
           name: 'Вживані Nintendo Switch',
           offers: {
