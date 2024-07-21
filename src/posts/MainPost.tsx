@@ -21,7 +21,7 @@ export const MainPost = memo(() => {
     reviewBody: review.comment,
     reviewRating: {
       '@type': 'Rating',
-      ratingValue: '1',
+      ratingValue: '5',
     },
   }))
 
