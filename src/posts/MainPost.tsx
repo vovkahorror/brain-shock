@@ -14,6 +14,17 @@ import logo from '../assets/images/logo.webp'
 import PreloaderIcon from '../assets/images/preloader.svg?react'
 
 export const MainPost = memo(() => {
+  const reviewsList = reviews.map(review => ({
+    '@type': 'Review',
+    author: review.name,
+    datePublished: review.date,
+    reviewBody: review.comment,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '1',
+    },
+  }))
+
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Store',
@@ -41,6 +52,7 @@ export const MainPost = memo(() => {
             priceCurrency: 'UAH',
             priceValidUntil: validPriceDate,
           },
+          review: reviewsList,
         },
         url: `${siteUrl}/new`,
       },
@@ -63,6 +75,7 @@ export const MainPost = memo(() => {
             priceCurrency: 'UAH',
             priceValidUntil: validPriceDate,
           },
+          review: reviewsList,
         },
         url: `${siteUrl}/used`,
       },
