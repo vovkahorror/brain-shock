@@ -36,7 +36,7 @@ export const MainPost = memo(() => {
             ratingValue: '5',
             reviewCount: reviews.length,
           },
-          description: 'Нові Nintendo Switch',
+          description: 'Нові прошиті, чиповані та модифіковані для комфортної гри Nintendo Switch',
           image: CoverImageNew,
           name: 'Нові Nintendo Switch',
           offers: {
@@ -62,7 +62,8 @@ export const MainPost = memo(() => {
             ratingValue: '5',
             reviewCount: reviews.length,
           },
-          description: 'Вживані Nintendo Switch',
+          description:
+            'Вживані прошиті, чиповані та модифіковані для комфортної гри Nintendo Switch',
           image: CoverImageUsed,
           name: 'Вживані Nintendo Switch',
           offers: {
