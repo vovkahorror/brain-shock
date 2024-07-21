@@ -36,6 +36,7 @@ export const MainPost = memo(() => {
             ratingValue: '5',
             reviewCount: reviews.length,
           },
+          description: 'Нові Nintendo Switch',
           image: CoverImageNew,
           name: 'Нові Nintendo Switch',
           offers: {
@@ -61,6 +62,7 @@ export const MainPost = memo(() => {
             ratingValue: '5',
             reviewCount: reviews.length,
           },
+          description: 'Вживані Nintendo Switch',
           image: CoverImageUsed,
           name: 'Вживані Nintendo Switch',
           offers: {
