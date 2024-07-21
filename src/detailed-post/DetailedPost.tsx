@@ -9,6 +9,7 @@ import { messageLink, siteUrl, telegramLink } from '@/common/consts/links'
 import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { useNavigation } from '@/common/hooks/useNavigation'
 import { postsData } from '@/data/posts-data'
+import { reviews } from '@/data/reviews'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
 import LightGallery from 'lightgallery/react'
@@ -72,6 +73,7 @@ const DetailedPost = memo(() => {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
+      reviewCount: reviews.length,
     },
     brand: {
       '@type': 'Brand',
