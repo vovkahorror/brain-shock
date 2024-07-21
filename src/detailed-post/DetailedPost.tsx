@@ -4,6 +4,7 @@ import { Navigate, useLocation, useParams } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
+import { validPriceDate } from '@/common/consts/calculations'
 import { messageLink, siteUrl, telegramLink } from '@/common/consts/links'
 import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -32,7 +33,6 @@ const DetailedPost = memo(() => {
   const currentPost = posts[navPath as keyof typeof postsData][postIndex as unknown as number]
 
   const canonicalUrl = `${siteUrl}${location.pathname}`
-  const validPriceDate = new Date(2025, 11, 31)
 
   useEffect(() => {
     if (currentPost && currentPost.photos) {
