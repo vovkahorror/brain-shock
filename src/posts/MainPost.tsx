@@ -36,6 +36,13 @@ export const MainPost = memo(() => {
           offers: {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
+            hasMerchantReturnPolicy: {
+              '@type': 'MerchantReturnPolicy',
+              applicableCountry: 'UA',
+              name: 'Політика повернення',
+              returnPolicyCategory: 'https://schema.org/ReturnShippingFees',
+              returnPolicyCountry: 'UA',
+            },
             itemCondition: 'https://schema.org/UsedCondition',
             price: '10199-15999',
             priceCurrency: 'UAH',
@@ -59,6 +66,13 @@ export const MainPost = memo(() => {
           offers: {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
+            hasMerchantReturnPolicy: {
+              '@type': 'MerchantReturnPolicy',
+              applicableCountry: 'UA',
+              name: 'Політика повернення',
+              returnPolicyCategory: 'https://schema.org/ReturnShippingFees',
+              returnPolicyCountry: 'UA',
+            },
             itemCondition: 'https://schema.org/UsedCondition',
             price: '7999-13999',
             priceCurrency: 'UAH',
