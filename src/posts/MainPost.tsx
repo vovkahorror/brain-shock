@@ -2,6 +2,7 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { NavLink } from 'react-router-dom'
 
+import { validPriceDate } from '@/common/consts/calculations'
 import { siteUrl } from '@/common/consts/links'
 
 import styles from './MainPost.module.scss'
@@ -32,6 +33,7 @@ export const MainPost = memo(() => {
             itemCondition: 'https://schema.org/UsedCondition',
             price: '10199-15999',
             priceCurrency: 'UAH',
+            priceValidUntil: validPriceDate,
           },
         },
         url: `${siteUrl}/new`,
@@ -48,6 +50,7 @@ export const MainPost = memo(() => {
             itemCondition: 'https://schema.org/UsedCondition',
             price: '7999-13999',
             priceCurrency: 'UAH',
+            priceValidUntil: validPriceDate,
           },
         },
         url: `${siteUrl}/used`,
