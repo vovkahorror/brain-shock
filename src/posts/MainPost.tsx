@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { NavLink } from 'react-router-dom'
 
-import { validPriceDate } from '@/common/consts/calculations'
+import { reviewsList, validPriceDate } from '@/common/consts/calculations'
 import { siteUrl } from '@/common/consts/links'
 import { reviews } from '@/data/reviews'
 
@@ -14,17 +14,6 @@ import logo from '../assets/images/logo.webp'
 import PreloaderIcon from '../assets/images/preloader.svg?react'
 
 export const MainPost = memo(() => {
-  const reviewsList = reviews.map(review => ({
-    '@type': 'Review',
-    author: review.name,
-    datePublished: review.date,
-    reviewBody: review.comment,
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: '5',
-    },
-  }))
-
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Store',

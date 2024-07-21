@@ -4,7 +4,7 @@ import { Navigate, useLocation, useParams } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
-import { validPriceDate } from '@/common/consts/calculations'
+import { reviewsList, validPriceDate } from '@/common/consts/calculations'
 import { messageLink, siteUrl, telegramLink } from '@/common/consts/links'
 import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -137,15 +137,7 @@ const DetailedPost = memo(() => {
       },
       url: canonicalUrl,
     },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-        },
-      },
-    ],
+    review: reviewsList,
   }
 
   return (
