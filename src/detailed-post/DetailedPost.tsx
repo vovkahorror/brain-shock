@@ -4,7 +4,12 @@ import { Navigate, useLocation, useParams } from 'react-router-dom'
 
 import { GoBack } from '@/common/components/GoBack/GoBack'
 import { ImageWithPreloading } from '@/common/components/ImageWithPreloading'
-import { reviewsList, validPriceDate } from '@/common/consts/calculations'
+import {
+  hasMerchantReturnPolicy,
+  reviewsList,
+  shippingDetails,
+  validPriceDate,
+} from '@/common/consts/calculations'
 import { messageLink, siteUrl, telegramLink } from '@/common/consts/links'
 import { formatStringToUrlFormat } from '@/common/helpers/formatStringToUrlFormat'
 import { useNavigation } from '@/common/hooks/useNavigation'
@@ -85,13 +90,7 @@ const DetailedPost = memo(() => {
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      hasMerchantReturnPolicy: {
-        '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'UA',
-        name: 'Політика повернення',
-        returnPolicyCategory: 'https://schema.org/ReturnShippingFees',
-        returnPolicyCountry: 'UA',
-      },
+      hasMerchantReturnPolicy: hasMerchantReturnPolicy,
       price: priceRange || price,
       priceCurrency: 'UAH',
       priceValidUntil: validPriceDate,
@@ -99,42 +98,7 @@ const DetailedPost = memo(() => {
         '@type': 'Organization',
         name: 'BrainShock',
       },
-      shippingDetails: {
-        '@type': 'OfferShippingDetails',
-        deliveryTime: {
-          businessDays: {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: [
-              'https://schema.org/Monday',
-              'https://schema.org/Tuesday',
-              'https://schema.org/Wednesday',
-              'https://schema.org/Thursday',
-              'https://schema.org/Friday',
-              'https://schema.org/Saturday',
-              'https://schema.org/Sunday',
-            ],
-          },
-          handlingTime: {
-            '@type': 'QuantitativeValue',
-            maxValue: 1,
-            minValue: 1,
-          },
-          transitTime: {
-            '@type': 'QuantitativeValue',
-            maxValue: 2,
-            minValue: 1,
-          },
-        },
-        shippingDestination: {
-          '@type': 'DefinedRegion',
-          addressCountry: 'UA',
-        },
-        shippingRate: {
-          '@type': 'MonetaryAmount',
-          currency: 'UAH',
-          value: true,
-        },
-      },
+      shippingDetails: shippingDetails,
       url: canonicalUrl,
     },
     review: reviewsList,

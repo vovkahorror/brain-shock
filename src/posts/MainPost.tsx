@@ -2,7 +2,12 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { NavLink } from 'react-router-dom'
 
-import { reviewsList, validPriceDate } from '@/common/consts/calculations'
+import {
+  hasMerchantReturnPolicy,
+  reviewsList,
+  shippingDetails,
+  validPriceDate,
+} from '@/common/consts/calculations'
 import { siteUrl } from '@/common/consts/links'
 import { reviews } from '@/data/reviews'
 
@@ -36,17 +41,12 @@ export const MainPost = memo(() => {
           offers: {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
-            hasMerchantReturnPolicy: {
-              '@type': 'MerchantReturnPolicy',
-              applicableCountry: 'UA',
-              name: 'Політика повернення',
-              returnPolicyCategory: 'https://schema.org/ReturnShippingFees',
-              returnPolicyCountry: 'UA',
-            },
+            hasMerchantReturnPolicy: hasMerchantReturnPolicy,
             itemCondition: 'https://schema.org/UsedCondition',
             price: '10199-15999',
             priceCurrency: 'UAH',
             priceValidUntil: validPriceDate,
+            shippingDetails: shippingDetails,
           },
           review: reviewsList,
         },
@@ -66,17 +66,12 @@ export const MainPost = memo(() => {
           offers: {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
-            hasMerchantReturnPolicy: {
-              '@type': 'MerchantReturnPolicy',
-              applicableCountry: 'UA',
-              name: 'Політика повернення',
-              returnPolicyCategory: 'https://schema.org/ReturnShippingFees',
-              returnPolicyCountry: 'UA',
-            },
+            hasMerchantReturnPolicy: hasMerchantReturnPolicy,
             itemCondition: 'https://schema.org/UsedCondition',
             price: '7999-13999',
             priceCurrency: 'UAH',
             priceValidUntil: validPriceDate,
+            shippingDetails: shippingDetails,
           },
           review: reviewsList,
         },
