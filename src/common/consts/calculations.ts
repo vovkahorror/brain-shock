@@ -4,7 +4,7 @@ export const validPriceDate = new Date(2025, 11, 31)
 
 export const reviewsList = reviews.map(review => ({
   '@type': 'Review',
-  author: { '@type': 'Person', givenName: review.name },
+  author: { '@type': 'Person', name: review.name },
   datePublished: review.date,
   reviewBody: review.comment,
   reviewRating: {
