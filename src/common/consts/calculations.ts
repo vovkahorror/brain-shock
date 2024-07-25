@@ -46,7 +46,7 @@ export const shippingDetails = {
   shippingRate: {
     '@type': 'MonetaryAmount',
     currency: 'UAH',
-    value: true,
+    value: 130,
   },
 }
 
