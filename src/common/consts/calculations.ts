@@ -37,6 +37,7 @@ export const shippingDetails = {
       '@type': 'QuantitativeValue',
       maxValue: 2,
       minValue: 1,
+      unitCode: 'DAY',
     },
   },
   shippingDestination: {
