@@ -32,6 +32,7 @@ export const shippingDetails = {
       '@type': 'QuantitativeValue',
       maxValue: 1,
       minValue: 1,
+      unitCode: 'DAY',
     },
     transitTime: {
       '@type': 'QuantitativeValue',
