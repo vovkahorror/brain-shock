@@ -56,6 +56,7 @@ export const hasMerchantReturnPolicy = {
   '@type': 'MerchantReturnPolicy',
   applicableCountry: 'UA',
   name: 'Політика повернення',
+  returnFees: 'itemDefectReturnFees',
   returnPolicyCategory: 'MerchantReturnFiniteReturnWindow',
   returnPolicyCountry: 'UA',
 }
