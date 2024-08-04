@@ -57,6 +57,7 @@ export const hasMerchantReturnPolicy = {
   applicableCountry: 'UA',
   name: 'Політика повернення',
   returnFees: 'OriginalShippingFees',
+  returnMethod: 'ReturnByMail',
   returnPolicyCategory: 'MerchantReturnFiniteReturnWindow',
   returnPolicyCountry: 'UA',
 }
