@@ -55,7 +55,15 @@ export const shippingDetails = {
 export const hasMerchantReturnPolicy = {
   '@type': 'MerchantReturnPolicy',
   applicableCountry: 'UA',
-  merchantReturnDays: '',
+  merchantReturnDays: [
+    'https://schema.org/Monday',
+    'https://schema.org/Tuesday',
+    'https://schema.org/Wednesday',
+    'https://schema.org/Thursday',
+    'https://schema.org/Friday',
+    'https://schema.org/Saturday',
+    'https://schema.org/Sunday',
+  ],
   name: 'Політика повернення',
   returnFees: 'OriginalShippingFees',
   returnMethod: 'ReturnByMail',
