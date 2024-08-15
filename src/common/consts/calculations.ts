@@ -61,4 +61,5 @@ export const hasMerchantReturnPolicy = {
   returnMethod: 'ReturnByMail',
   returnPolicyCategory: 'MerchantReturnFiniteReturnWindow',
   returnPolicyCountry: 'UA',
+  returnShippingFeesAmount: '',
 }
