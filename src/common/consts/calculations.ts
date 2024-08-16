@@ -61,5 +61,9 @@ export const hasMerchantReturnPolicy = {
   returnMethod: 'ReturnByMail',
   returnPolicyCategory: 'MerchantReturnFiniteReturnWindow',
   returnPolicyCountry: 'UA',
-  returnShippingFeesAmount: '',
+  returnShippingFeesAmount: {
+    '@type': 'MonetaryAmount',
+    currency: 'UAH', // Валюта
+    value: '50.00', // Вартість зворотної доставки
+  },
 }
