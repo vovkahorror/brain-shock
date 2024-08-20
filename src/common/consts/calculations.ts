@@ -64,6 +64,6 @@ export const hasMerchantReturnPolicy = {
   returnShippingFeesAmount: {
     '@type': 'MonetaryAmount',
     currency: 'UAH',
-    value: 130.0,
+    value: 130,
   },
 }
