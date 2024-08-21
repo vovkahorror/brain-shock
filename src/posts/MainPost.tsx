@@ -22,6 +22,11 @@ export const MainPost = memo(() => {
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Store',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Philadelphia',
+      addressRegion: 'PA',
+    },
     description: 'BrainShock – магазин прошитих Nintendo Switch',
     image: [CoverImageNew, CoverImageUsed],
     logo: logo,
