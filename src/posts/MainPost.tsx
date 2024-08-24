@@ -86,6 +86,7 @@ export const MainPost = memo(() => {
         url: `${siteUrl}/used`,
       },
     ],
+    priceRange: '',
     url: siteUrl,
   }
 
