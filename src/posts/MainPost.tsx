@@ -26,6 +26,7 @@ export const MainPost = memo(() => {
       '@type': 'PostalAddress',
       addressLocality: 'Kyiv, Ukraine',
       addressRegion: 'UA',
+      postalCode: '01001',
     },
     description: 'BrainShock – магазин прошитих Nintendo Switch',
     image: [CoverImageNew, CoverImageUsed],
