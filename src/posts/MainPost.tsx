@@ -24,6 +24,7 @@ export const MainPost = memo(() => {
     '@type': 'Store',
     address: {
       '@type': 'PostalAddress',
+      addressCountry: 'Ukraine',
       addressLocality: 'Kyiv, Ukraine',
       addressRegion: 'UA',
       postalCode: '01001',
