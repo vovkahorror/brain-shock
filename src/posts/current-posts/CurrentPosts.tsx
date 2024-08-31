@@ -63,7 +63,7 @@ const CurrentPosts = memo(() => {
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      itemCondition: 'https://schema.org/UsedCondition',
+      itemCondition: 'https://schema.org/NewCondition',
       price: `${minPrice}-${maxPrice}`,
       priceCurrency: 'UAH',
       url: canonicalUrl,
