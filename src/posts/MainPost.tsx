@@ -78,7 +78,7 @@ export const MainPost = memo(() => {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
             hasMerchantReturnPolicy: hasMerchantReturnPolicy,
-            itemCondition: 'https://schema.org/MainPost',
+            itemCondition: 'https://schema.org/NewCondition',
             price: 7999,
             priceCurrency: 'UAH',
             priceValidUntil: validPriceDate,
